@@ -625,7 +625,8 @@ class ReportsModel extends CI_Model
                 SELECT 
                     CONCAT(GROUP_CONCAT(IF(csssqd.suggestions != '', CONCAT(csssqd.suggestions), NULL) SEPARATOR ';;'))
                 FROM tblcss_details_sqd csssqd 
-                JOIN tblcss_summary csssum ON csssum.csssummaryid = csssqd.csssummaryid 
+                JOIN tblcss_summary csssum ON csssum.csssummaryid = csssqd.csssummaryid
+                JOIN tblquarters qua ON qua.quarterid = csssum.quarterid
                 WHERE csssum.servicesid = ser.servicesid AND csssum.year = ".$params['year'] . $semesteridExt . $quarteridExt ."
             ) AS comments
         FROM tblservices ser
@@ -713,6 +714,7 @@ class ReportsModel extends CI_Model
                     CONCAT(GROUP_CONCAT(IF(csssqd.suggestions != '', CONCAT(csssqd.suggestions), NULL) SEPARATOR ';;'))
                 FROM tblcss_details_sqd csssqd 
                 JOIN tblcss_summary csssum ON csssum.csssummaryid = csssqd.csssummaryid 
+                JOIN tblquarters qua ON qua.quarterid = csssum.quarterid
                 WHERE csssum.servicesid = ser.servicesid AND csssum.year = ".$params['year'] . $semesteridExt . $quarteridExt . $officeidExt ."
             ) AS comments
         FROM tblservices ser
