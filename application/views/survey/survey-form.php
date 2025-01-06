@@ -182,7 +182,7 @@
                                                     </div>
                                                     <div class="checkbox">
                                                         <input type="checkbox" id="chkhdyk3" name="dost_info" value="Referral" />
-                                                        <label for="chkhdyk3">Referral</label>
+                                                        <label for="chkhdyk3">Referral (Word of Mouth)</label>
                                                     </div>
                                                     <div class="checkbox">
                                                         <input type="checkbox" id="chkhdyk4" name="dost_info" value="Website" />
@@ -205,33 +205,33 @@
                                         </form>
                                             <form id="frm-step-2" method="POST" style="display:none;">
                                                 <p class="text-dark" >
-                                                    INSTRUCTIONS: Select your answer to the Citizen's Charter (CC) questions. The Citizen's Charter is an official document that reflects the services of a government agency/office including its
+                                                    INSTRUCTIONS: Select your answer to the <b>Citizen's Charter (CC)</b> questions. The Citizen's Charter is an official document that reflects the services of a government agency/office including its
                                                     requirements, fees, and processing times among others.
                                                 </p>
                                                 <p class="text-primary" >Note: The survey already contains answers. If you agree with the provided answers, simply click <strong>Next</strong>. Otherwise, feel free to change them by selecting your desired response and click <strong>Next</strong>.</p>
 
                                                 <div class="form-group">
-                                                    <label for="cc1"><b>CC1: Which of the following best describes your awareness of a CC?</b> <span class="text-danger">*</span></label>
+                                                    <label for="cc1"><b>CC1: Which of the following best describes your awareness of a Citizen's Charter?</b> <span class="text-danger">*</span></label>
                                                     <div class="radio">
                                                         <input type="radio" id="rdoCC1-1" name="cc1" value="4" checked required/>
-                                                        <label for="rdoCC1-1">I know what a CC is and I saw this office's CC.</label>
+                                                        <label for="rdoCC1-1">I know what a Citizen's Charter is and I saw this office's Citizen's Charter.</label>
                                                     </div>
                                                     <div class="radio">
                                                         <input type="radio" id="rdoCC1-2" name="cc1" value="3" />
-                                                        <label for="rdoCC1-2">I know what a CC is but did NOT see this office's CC.</label>
+                                                        <label for="rdoCC1-2">I know what a Citizen's Charter is but did NOT see this office's Citizen's Charter.</label>
                                                     </div>
                                                     <div class="radio">
                                                         <input type="radio" id="rdoCC1-3" name="cc1" value="2" />
-                                                        <label for="rdoCC1-3">I learned of the CC only when I saw this office's CC.</label>
+                                                        <label for="rdoCC1-3">I learned of the Citizen's Charter only when I saw this office's Citizen's Charter.</label>
                                                     </div>
                                                     <div class="radio">
                                                         <input type="radio" id="rdoCC1-4" name="cc1" value="1" />
-                                                        <label for="rdoCC1-4">I do not know what a CC is and I did not see one in this office.</label>
+                                                        <label for="rdoCC1-4">I do not know what a Citizen's Charter is and I did not see one in this office.</label>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="cc2"><b>CC2: If aware of CC (answered 1-3 in CC1), would you say that the CC of this office was ...?</b> <span class="text-danger">*</span></label>
+                                                    <label for="cc2"><b>CC2: If aware of Citizen's Charter (answered 1-3 in CC1), would you say that the Citizen's Charter of this office was ...?</b> <span class="text-danger">*</span></label>
                                                     <div class="radio">
                                                         <input type="radio" id="rdoCC2-1" name="cc2" value="4" checked required/>
                                                         <label for="rdoCC2-1">Easy to see</label>
@@ -251,7 +251,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="cc3"><b>CC3: If aware of CC (answered 1-3 in CC1), how much did the CC help you in your transaction?</b> <span class="text-danger">*</span></label>
+                                                    <label for="cc3"><b>CC3: If aware of Citizen's Charter (answered 1-3 in CC1), how much did the Citizen's Charter help you in your transaction?</b> <span class="text-danger">*</span></label>
                                                     <div class="radio">
                                                         <input type="radio" id="rdoCC3-1" name="cc3" value="3" checked required/>
                                                         <label for="rdoCC3-1">Helped very much</label>
