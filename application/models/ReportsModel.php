@@ -558,7 +558,7 @@ class ReportsModel extends CI_Model
         ";
 
         $xxValueCTE = "
-        SELECT servicesid, ROUND(IFNULL(SUM(sqd0) / NULLIF(COUNT(*), 0), 0) * 20, 1) AS xx
+        SELECT servicesid, ROUND(IFNULL( SUM(CASE WHEN sqd0 >= 4 THEN 5 ELSE sqd0 END) / NULLIF(COUNT(*), 0), 0) * 20, 1) AS xx
         FROM css_summary
         GROUP BY servicesid
         ";
@@ -664,7 +664,7 @@ class ReportsModel extends CI_Model
             GROUP BY servicesid
         ) AS vc ON ser.servicesid = vc.servicesid
         LEFT JOIN (
-            SELECT servicesid, ROUND(IFNULL(SUM(sqd0) / NULLIF(COUNT(*), 0), 0) * 20, 1) AS xx
+            SELECT servicesid, ROUND(IFNULL( SUM(CASE WHEN sqd0 >= 4 THEN 5 ELSE sqd0 END) / NULLIF(COUNT(*), 0), 0) * 20, 1) AS xx
             FROM (
                 SELECT csssum.servicesid, csssum.quarterid, qua.semesterid, csssum.year, sqd.sqd0
                 FROM tblcss_summary csssum
@@ -751,7 +751,7 @@ class ReportsModel extends CI_Model
             GROUP BY servicesid
         ) AS vc ON ser.servicesid = vc.servicesid
         LEFT JOIN (
-            SELECT servicesid, ROUND(IFNULL(SUM(sqd0) / NULLIF(COUNT(*), 0), 0) * 20, 1) AS xx
+            SELECT servicesid, ROUND(IFNULL( SUM(CASE WHEN sqd0 >= 4 THEN 5 ELSE sqd0 END) / NULLIF(COUNT(*), 0), 0) * 20, 1) AS xx
             FROM (
                 SELECT csssum.servicesid, csssum.quarterid, qua.semesterid, csssum.year, sqd.sqd0
                 FROM tblcss_summary csssum
