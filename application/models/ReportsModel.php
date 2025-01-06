@@ -518,6 +518,97 @@ class ReportsModel extends CI_Model
 
     }
 
+    public function gen_agegroup($params)
+    {
+        $final_query = "SELECT 
+                    `ag`.*, 
+                    `co`.`external_count`, 
+                    `co`.`internal_count`, 
+                    `co`.`total_per_agegroup`, 
+                    `xto`.`total_overall`
+                    FROM 
+                    `tblagegroup` `ag`
+                    LEFT JOIN (
+                        SELECT 
+                        `age`, 
+                        SUM(CASE WHEN `is_external` = 1 THEN 1 ELSE 0 END) AS `external_count`, 
+                        SUM(CASE WHEN `is_external` = 0 THEN 1 ELSE 0 END) AS `internal_count`, 
+                        COUNT(*) AS `total_per_agegroup`
+                        FROM (
+                        SELECT 
+                            `cs`.`age`, 
+                            `cs`.`year`, 
+                            `cs`.`officeid`, 
+                            `cs`.`quarterid`, 
+                            `ser`.`is_external`, 
+                            `quar`.`semesterid`
+                        FROM 
+                            `tblcss_summary` `cs`
+                            JOIN `tblservices` `ser` ON `ser`.`servicesid` = `cs`.`servicesid`
+                            JOIN `tblquarters` `quar` ON `quar`.`quarterid` = `cs`.`quarterid`
+                        WHERE 
+                            `cs`.`year` = ".$params['year'];
+
+
+                        if ($params['officeid'] != 'all') {
+                            $final_query .= ' AND cs.officeid = ' . $params['officeid'];
+                        }
+
+
+                        if ($params['typeselector'] === 'semester') {
+                            if ($params['semesterid'] != 'all') {
+                                $final_query .= ' AND quar.semesterid = '.$params['semesterid'];
+                            }
+                        }
+
+                        if ($params['typeselector'] === 'quarter') {
+                            $final_query .= ' AND quar.quarterid = '.$params['quarterid'];
+                        }    
+
+        $final_query .=                ") as css_data
+                        GROUP BY `age`
+                    ) as co ON `ag`.`agegroupid` = `co`.`age`
+                    JOIN (
+                        SELECT 
+                        COUNT(*) AS `total_overall`
+                        FROM (
+                        SELECT 
+                            `cs`.`clienttypeid`, 
+                            `cs`.`year`, 
+                            `cs`.`officeid`, 
+                            `cs`.`quarterid`, 
+                            `ser`.`is_external`, 
+                            `quar`.`semesterid`
+                        FROM 
+                            `tblcss_summary` `cs`
+                            JOIN `tblservices` `ser` ON `ser`.`servicesid` = `cs`.`servicesid`
+                            JOIN `tblquarters` `quar` ON `quar`.`quarterid` = `cs`.`quarterid`
+                        WHERE 
+                            `cs`.`year` = ".$params['year'];
+                            if ($params['officeid'] != 'all') {
+                                $final_query .= ' AND cs.officeid = ' . $params['officeid'];
+                            }
+    
+    
+                            if ($params['typeselector'] === 'semester') {
+                                if ($params['semesterid'] != 'all') {
+                                    $final_query .= ' AND quar.semesterid = '.$params['semesterid'];
+                                }
+                            }
+    
+                            if ($params['typeselector'] === 'quarter') {
+                                $final_query .= ' AND quar.quarterid = '.$params['quarterid'];
+                            } 
+
+        $final_query .= " ) as css_data
+                    ) as xto ON 1=1";
+
+        $query = $this->db->query($final_query);
+
+        return $query->result_array();
+
+    }
+
     public function gen_servicesx($params,$is_external){
         // Common Table Expressions (CTEs)
         $cssSummaryCTE = "

@@ -63,141 +63,52 @@
                         <tr>
                             <td colspan="4"><b>Age Distribution</b></td>
                         </tr>
-                        <tr>
-    <td>19 or lower</td>
-    <td class="text-center">
-        <?php
-        $external_19_or_lower = isset($age_distribution['external_19_or_lower']) ? $age_distribution['external_19_or_lower'] : 0;
-        $total_external_count = isset($age_distribution['total_external_count']) ? $age_distribution['total_external_count'] : 0;
-        $percent_external = $total_external_count != 0 ? round(($external_19_or_lower / $total_external_count) * 100, 1) : 0;
-        echo $external_19_or_lower . ' <small>(' . $percent_external . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $internal_19_or_lower = isset($age_distribution['internal_19_or_lower']) ? $age_distribution['internal_19_or_lower'] : 0;
-        $total_internal_count = isset($age_distribution['total_internal_count']) ? $age_distribution['total_internal_count'] : 0;
-        $percent_internal = $total_internal_count != 0 ? round(($internal_19_or_lower / $total_internal_count) * 100, 1) : 0;
-        echo $internal_19_or_lower . ' <small>(' . $percent_internal . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $total_19_or_lower = isset($age_distribution['total_19_or_lower']) ? $age_distribution['total_19_or_lower'] : 0;
-        $all_total = isset($age_distribution['all_total']) ? $age_distribution['all_total'] : 0;
-        $percent_overall = $all_total != 0 ? round(($total_19_or_lower / $all_total) * 100, 1) : 0;
-        echo $total_19_or_lower . ' <small>(' . $percent_overall . '%)</small>';
-        ?>
-    </td>
-</tr>
-<tr>
-    <td>20-34</td>
-    <td class="text-center">
-        <?php
-        $external_20_34 = isset($age_distribution['external_20_34']) ? $age_distribution['external_20_34'] : 0;
-        $total_external_count = isset($age_distribution['total_external_count']) ? $age_distribution['total_external_count'] : 0;
-        $percent_external = $total_external_count != 0 ? round(($external_20_34 / $total_external_count) * 100, 1) : 0;
-        echo $external_20_34 . ' <small>(' . $percent_external . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $internal_20_34 = isset($age_distribution['internal_20_34']) ? $age_distribution['internal_20_34'] : 0;
-        $total_internal_count = isset($age_distribution['total_internal_count']) ? $age_distribution['total_internal_count'] : 0;
-        $percent_internal = $total_internal_count != 0 ? round(($internal_20_34 / $total_internal_count) * 100, 1) : 0;
-        echo $internal_20_34 . ' <small>(' . $percent_internal . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $total_20_34 = isset($age_distribution['total_20_34']) ? $age_distribution['total_20_34'] : 0;
-        $all_total = isset($age_distribution['all_total']) ? $age_distribution['all_total'] : 0;
-        $percent_overall = $all_total != 0 ? round(($total_20_34 / $all_total) * 100, 1) : 0;
-        echo $total_20_34 . ' <small>(' . $percent_overall . '%)</small>';
-        ?>
-    </td>
-</tr>
-<tr>
-    <td>35-49</td>
-    <td class="text-center">
-        <?php
-        $external_35_49 = isset($age_distribution['external_35_49']) ? $age_distribution['external_35_49'] : 0;
-        $total_external_count = isset($age_distribution['total_external_count']) ? $age_distribution['total_external_count'] : 0;
-        $percent_external = $total_external_count != 0 ? round(($external_35_49 / $total_external_count) * 100, 1) : 0;
-        echo $external_35_49 . ' <small>(' . $percent_external . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $internal_35_49 = isset($age_distribution['internal_35_49']) ? $age_distribution['internal_35_49'] : 0;
-        $total_internal_count = isset($age_distribution['total_internal_count']) ? $age_distribution['total_internal_count'] : 0;
-        $percent_internal = $total_internal_count != 0 ? round(($internal_35_49 / $total_internal_count) * 100, 1) : 0;
-        echo $internal_35_49 . ' <small>(' . $percent_internal . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $total_35_49 = isset($age_distribution['total_35_49']) ? $age_distribution['total_35_49'] : 0;
-        $all_total = isset($age_distribution['all_total']) ? $age_distribution['all_total'] : 0;
-        $percent_overall = $all_total != 0 ? round(($total_35_49 / $all_total) * 100, 1) : 0;
-        echo $total_35_49 . ' <small>(' . $percent_overall . '%)</small>';
-        ?>
-    </td>
-</tr>
-<tr>
-    <td>50-64</td>
-    <td class="text-center">
-        <?php
-        $external_50_64 = isset($age_distribution['external_50_64']) ? $age_distribution['external_50_64'] : 0;
-        $total_external_count = isset($age_distribution['total_external_count']) ? $age_distribution['total_external_count'] : 0;
-        $percent_external = $total_external_count != 0 ? round(($external_50_64 / $total_external_count) * 100, 1) : 0;
-        echo $external_50_64 . ' <small>(' . $percent_external . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $internal_50_64 = isset($age_distribution['internal_50_64']) ? $age_distribution['internal_50_64'] : 0;
-        $total_internal_count = isset($age_distribution['total_internal_count']) ? $age_distribution['total_internal_count'] : 0;
-        $percent_internal = $total_internal_count != 0 ? round(($internal_50_64 / $total_internal_count) * 100, 1) : 0;
-        echo $internal_50_64 . ' <small>(' . $percent_internal . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $total_50_64 = isset($age_distribution['total_50_64']) ? $age_distribution['total_50_64'] : 0;
-        $all_total = isset($age_distribution['all_total']) ? $age_distribution['all_total'] : 0;
-        $percent_overall = $all_total != 0 ? round(($total_50_64 / $all_total) * 100, 1) : 0;
-        echo $total_50_64 . ' <small>(' . $percent_overall . '%)</small>';
-        ?>
-    </td>
-</tr>
-<tr>
-    <td>65 or higher</td>
-    <td class="text-center">
-        <?php
-        $external_65_or_higher = isset($age_distribution['external_65_or_higher']) ? $age_distribution['external_65_or_higher'] : 0;
-        $total_external_count = isset($age_distribution['total_external_count']) ? $age_distribution['total_external_count'] : 0;
-        $percent_external = $total_external_count != 0 ? round(($external_65_or_higher / $total_external_count) * 100, 1) : 0;
-        echo $external_65_or_higher . ' <small>(' . $percent_external . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $internal_65_or_higher = isset($age_distribution['internal_65_or_higher']) ? $age_distribution['internal_65_or_higher'] : 0;
-        $total_internal_count = isset($age_distribution['total_internal_count']) ? $age_distribution['total_internal_count'] : 0;
-        $percent_internal = $total_internal_count != 0 ? round(($internal_65_or_higher / $total_internal_count) * 100, 1) : 0;
-        echo $internal_65_or_higher . ' <small>(' . $percent_internal . '%)</small>';
-        ?>
-    </td>
-    <td class="text-center">
-        <?php
-        $total_65_or_higher = isset($age_distribution['total_65_or_higher']) ? $age_distribution['total_65_or_higher'] : 0;
-        $all_total = isset($age_distribution['all_total']) ? $age_distribution['all_total'] : 0;
-        $percent_overall = $all_total != 0 ? round(($total_65_or_higher / $all_total) * 100, 1) : 0;
-        echo $total_65_or_higher . ' <small>(' . $percent_overall . '%)</small>';
-        ?>
-    </td>
-</tr>
+                        <?php
+                            foreach ($agegroup as $agegroupRow) { ?>
+                                <tr>
+                                    <td>
+                                        <?php echo isset($agegroupRow['agegroup']) ? $agegroupRow['agegroup'] : ''; ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <?php
+                                        $externalCount = isset($agegroupRow['external_count']) ? $agegroupRow['external_count'] : 0;
+                                        $ctypeTotalExternal = isset($ctype_total_external) ? $ctype_total_external : 0;
+                                        $percentExternal = $ctypeTotalExternal != 0 
+                                            ? round(($externalCount / $ctypeTotalExternal) * 100, 1) 
+                                            : 0;
+                                        echo $externalCount . ' <small>(' . $percentExternal . '%)</small>';
+                                        ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <?php
+                                        $internalCount = isset($agegroupRow['internal_count']) ? $agegroupRow['internal_count'] : 0;
+                                        $ctypeTotalInternal = isset($ctype_total_internal) ? $ctype_total_internal : 0;
+                                        $percentInternal = $ctypeTotalInternal != 0 
+                                            ? round(($internalCount / $ctypeTotalInternal) * 100, 1) 
+                                            : 0;
+                                        echo $internalCount . ' <small>(' . $percentInternal . '%)</small>';
+                                        ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <?php
+                                        $externalCount = isset($agegroupRow['external_count']) ? $agegroupRow['external_count'] : 0;
+                                        $internalCount = isset($agegroupRow['internal_count']) ? $agegroupRow['internal_count'] : 0;
+                                        $totalOverall = isset($agegroupRow['total_overall']) ? $agegroupRow['total_overall'] : 0;
+                                        $totalPerCtype = isset($agegroupRow['total_per_agegroup']) ? $agegroupRow['total_per_agegroup'] : 0;
+                                        $totalCount = $externalCount + $internalCount;
+                                        
+                                        $percentOverall = $totalOverall != 0 
+                                            ? round(($totalPerCtype / $totalOverall) * 100, 1) 
+                                            : 0;
+                                        
+                                            echo $totalCount . ' <small>(' . $percentOverall . '%)</small>';
+                                        ?>
+                                    </td>
+                                </tr>
+
+                                <?php
+                            }
+                        ?>
 
                     <tr>
                         <td colspan="4">&nbsp;</td>

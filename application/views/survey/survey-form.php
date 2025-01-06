@@ -144,7 +144,13 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="age"><b>Age:</b> <span class="text-danger">*</span></label>
-                                                    <input type="number" class="form-control" name="age" id="age" placeholder="Enter age" required/>
+                                                    <!-- <input type="number" class="form-control" name="age" id="age" placeholder="Enter age" required/> -->
+                                                    <select name="age" class="form-control" required>
+                                                        <option value="">Select age group...</option>
+                                                        <?php foreach ($agegroup as $agegroupRow) { ?>
+                                                            <option value="<?=$agegroupRow['agegroupid']?>"><?=$agegroupRow['agegroup']?></option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="vulnerable-sector"><b>Vulnerable Sector:</b> <small>(optional)</small></label>

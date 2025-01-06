@@ -21,6 +21,7 @@ class Survey extends CI_Controller
         $data['services'] = $this->surveyModel->get_services($filter);
         $data['clienttype'] = $this->surveyModel->get_all_data('tblclienttype');
         $data['offices'] = $this->surveyModel->get_all_data('tbloffice');
+        $data['agegroup'] = $this->surveyModel->get_all_data('tblagegroup');
 
         if (empty($data['services']) || empty($data['clienttype']) || empty($data['offices'])) {
             // handle empty results, e.g. show an error message

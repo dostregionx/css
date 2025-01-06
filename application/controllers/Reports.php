@@ -49,6 +49,7 @@ class Reports extends CI_Controller
         }
 
         $data['clienttype'] = $this->reportsModel->gen_client_type($params);
+        $data['agegroup'] = $this->reportsModel->gen_agegroup($params);
         $data['sex'] = $this->reportsModel->gen_sex($params);
         $data['age_distribution'] = $this->reportsModel->gen_age_distribution($params);
         $data['vulsector'] = $this->reportsModel->gen_vulsector($params);
@@ -116,6 +117,7 @@ class Reports extends CI_Controller
         }
 
         $data['clienttype'] = $this->reportsModel->gen_client_type($params);
+        $data['agegroup'] = $this->reportsModel->gen_agegroup($params);
         $data['sex'] = $this->reportsModel->gen_sex($params);
         $data['age_distribution'] = $this->reportsModel->gen_age_distribution($params);
         $data['vulsector'] = $this->reportsModel->gen_vulsector($params);
