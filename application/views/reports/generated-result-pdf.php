@@ -2,6 +2,18 @@
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul,li{
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .text-center{
@@ -13,11 +25,11 @@ table, th, td {
 </style>
 <div class="m-t-25">
 <div class="text-center">
-<span>Republic of the Philippines</span>
-<h3>DEPARTMENT OF SCIENCE AND TECHNOLOGY</h3>
+<span><p style="margin-bottom: 5px;">Republic of the Philippines</p></span>
+<h3 style="margin-top: 5px;">DEPARTMENT OF SCIENCE AND TECHNOLOGY</h3>
 </div>
 
-EXTERNAL AND INTERNAL CUSTOMER SATISFACTION SURVEY REPORT <br>
+<p style="font-size: 13px;">EXTERNAL AND INTERNAL CUSTOMER SATISFACTION SURVEY REPORT<br>
 Year: <?=$params['year']?> <br>
 <?php
         if ($params['typeselector'] == 'semester') {
@@ -50,8 +62,8 @@ Year: <?=$params['year']?> <br>
         }
     ?>
     <br>
-Office: <?=$officename['name']?> <br>
-    <h5>Part I. Respondents Demographic Profile</h5>
+Office: <?=$officename['name']?></p>  <br>
+    <h5 style="margin-top: 2px;">Part I. Respondents Demographic Profile</h5>
     <table class="table table-bordered table-full table-full">
         <thead>
             <tr class="text-center">
@@ -813,4 +825,11 @@ Office: <?=$officename['name']?> <br>
         </tbody>
     </table>
     <h5>Annex. Comments or suggestions from the clients or customers.</h5>
+    <div class="comments-container">
+        <ul>
+        <?php foreach ($comments as $commentsRow) { ?>
+            <li><?=$commentsRow['suggestions']?></li>    
+        <?php } ?>
+        </ul>
+    </div>
 </div>

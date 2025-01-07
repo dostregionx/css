@@ -53,6 +53,7 @@ class Reports extends CI_Controller
         $data['sex'] = $this->reportsModel->gen_sex($params);
         $data['age_distribution'] = $this->reportsModel->gen_age_distribution($params);
         $data['vulsector'] = $this->reportsModel->gen_vulsector($params);
+        $data['comments'] = $this->reportsModel->gen_comments($params);
 
         $ctype_total_external = $ctype_total_internal = 0;
 
@@ -121,6 +122,7 @@ class Reports extends CI_Controller
         $data['sex'] = $this->reportsModel->gen_sex($params);
         $data['age_distribution'] = $this->reportsModel->gen_age_distribution($params);
         $data['vulsector'] = $this->reportsModel->gen_vulsector($params);
+        $data['comments'] = $this->reportsModel->gen_comments($params);
 
         $ctype_total_external = $ctype_total_internal = 0;
 

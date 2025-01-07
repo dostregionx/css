@@ -859,4 +859,28 @@ class ReportsModel extends CI_Model
         return $query->result_array();
     }
 
+    public function gen_comments($params){
+        $quarteridExt = $semesteridExt = $officeidExt = '';
+        
+        if ($params['typeselector'] === 'semester') {
+            if ($params['semesterid'] != 'all') {
+                $semesteridExt = " AND qua.semesterid = ".$params['semesterid'];
+            }
+        }
+
+        if ($params['typeselector'] === 'quarter') {
+            $quarteridExt = " AND csssum.quarterid = ".$params['quarterid'];
+        }
+
+        if ($params['officeid'] != 'all') {
+            $officeidExt = " AND csssum.officeid = ".$params['officeid'];
+        }
+
+        $final_query = "SELECT DISTINCT sqd.suggestions FROM tblcss_summary csssum LEFT JOIN tblcss_details_sqd sqd ON sqd.csssummaryid = csssum.csssummaryid JOIN tblquarters qua ON qua.quarterid = csssum.quarterid WHERE sqd.suggestions != '' AND csssum.year = ".$params['year'] . $semesteridExt . $quarteridExt . $officeidExt;
+
+        $query = $this->db->query($final_query);
+
+        return $query->result_array();
+    }
+
 }

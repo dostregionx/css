@@ -803,6 +803,13 @@
                     </tbody>
                 </table>
                 <h5>Annex. Comments or suggestions from the clients or customers.</h5>
+                <div class="comments-container px-10">
+                    <ul>
+                    <?php foreach ($comments as $commentsRow) { ?>
+                        <li><?=$commentsRow?></li>    
+                    <?php } ?>
+                    </ul>
+                </div>
             </div>
 
             <script>
