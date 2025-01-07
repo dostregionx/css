@@ -833,3 +833,15 @@ Office: <?=$officename['name']?></p>  <br>
         </ul>
     </div>
 </div>
+
+<script>
+        // Function to trigger print dialog
+        function triggerPrint() {
+            window.print();
+        }
+
+        // Automatically call the print function when the page loads
+        window.onload = function() {
+            triggerPrint();
+        };
+    </script>
