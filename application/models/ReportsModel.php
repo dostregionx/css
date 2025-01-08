@@ -859,32 +859,6 @@ class ReportsModel extends CI_Model
         return $query->result_array();
     }
 
-    public function gen_commentsx($params) {
-        // Start building the query
-        $this->db->distinct();
-        $this->db->select('sqd.suggestions');
-        $this->db->from('tblcss_summary csssum');
-        $this->db->join('tblcss_details_sqd sqd', 'sqd.csssummaryid = csssum.csssummaryid', 'left');
-        $this->db->join('tblquarters qua', 'qua.quarterid = csssum.quarterid', 'inner');
-        $this->db->where('sqd.suggestions !=', '');
-        $this->db->where('csssum.year', $params['year']);
-        
-        // Add conditions based on parameters
-        if ($params['typeselector'] === 'semester' && $params['semesterid'] != 'all') {
-            $this->db->where('qua.semesterid', $params['semesterid']);
-        }
-        if ($params['typeselector'] === 'quarter') {
-            $this->db->where('csssum.quarterid', $params['quarterid']);
-        }
-        if ($params['officeid'] != 'all') {
-            $this->db->where('csssum.officeid', $params['officeid']);
-        }
-        
-        // Execute the query and return the result
-        $query = $this->db->get();
-        return $query->result_array();
-    }
-
     public function gen_comments($params){
         $this->db->select('sera.servicesid, sera.name, sera.unit, GROUP_CONCAT( DISTINCT sqd.suggestions SEPARATOR ";;") AS aggregated_suggestions');
         $this->db->from('tblservices sera');

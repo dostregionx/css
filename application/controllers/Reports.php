@@ -104,6 +104,7 @@ class Reports extends CI_Controller
         $data['sqd'] = $this->reportsModel->gen_sqd($params);
 
         $this->load->view('reports/generated-result-view', $data);
+
     }
 
     public function gen_pdf()
