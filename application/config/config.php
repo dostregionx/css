@@ -23,8 +23,8 @@ date_default_timezone_set('Asia/Manila');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = BASE.'/dostx_css';
-// $config['base_url'] = BASE;
+// $config['base_url'] = BASE.'/dostx_css';
+$config['base_url'] = BASE;
 
 
 /*
