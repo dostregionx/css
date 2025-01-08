@@ -826,18 +826,25 @@ Office: <?=$officename['name']?></p>  <br>
     </table>
     <h5>Annex. Comments or suggestions from the clients or customers.</h5>
     <div class="comments-container">
-        <ul>
         <?php foreach ($comments as $commentsRow) { ?>
-            <li><?=$commentsRow['suggestions']?></li>    
-        <?php } ?>
-        </ul>
+            <h6><?php echo $commentsRow['name'] . ($commentsRow['name'] && $commentsRow['unit'] ? " - " : '') . $commentsRow['unit']; ?></h6>
+            <ul>
+                <?php $arr_comments =  explode(';;', $commentsRow['aggregated_suggestions']);?>
+                <?php for ($i=0; $i < sizeof($arr_comments); $i++) { 
+                    ?>
+                    <li><?=$arr_comments[$i]?></li>
+                    <?php
+                }?>
+            </ul>    
+        <?php }?>
+        
     </div>
 </div>
 
 <script>
         // Function to trigger print dialog
         function triggerPrint() {
-            window.print();
+            // window.print();
         }
 
         // Automatically call the print function when the page loads

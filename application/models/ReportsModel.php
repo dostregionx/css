@@ -859,28 +859,59 @@ class ReportsModel extends CI_Model
         return $query->result_array();
     }
 
-    public function gen_comments($params){
-        $quarteridExt = $semesteridExt = $officeidExt = '';
+    public function gen_commentsx($params) {
+        // Start building the query
+        $this->db->distinct();
+        $this->db->select('sqd.suggestions');
+        $this->db->from('tblcss_summary csssum');
+        $this->db->join('tblcss_details_sqd sqd', 'sqd.csssummaryid = csssum.csssummaryid', 'left');
+        $this->db->join('tblquarters qua', 'qua.quarterid = csssum.quarterid', 'inner');
+        $this->db->where('sqd.suggestions !=', '');
+        $this->db->where('csssum.year', $params['year']);
         
-        if ($params['typeselector'] === 'semester') {
-            if ($params['semesterid'] != 'all') {
-                $semesteridExt = " AND qua.semesterid = ".$params['semesterid'];
-            }
+        // Add conditions based on parameters
+        if ($params['typeselector'] === 'semester' && $params['semesterid'] != 'all') {
+            $this->db->where('qua.semesterid', $params['semesterid']);
         }
-
         if ($params['typeselector'] === 'quarter') {
-            $quarteridExt = " AND csssum.quarterid = ".$params['quarterid'];
+            $this->db->where('csssum.quarterid', $params['quarterid']);
         }
-
         if ($params['officeid'] != 'all') {
-            $officeidExt = " AND csssum.officeid = ".$params['officeid'];
+            $this->db->where('csssum.officeid', $params['officeid']);
         }
-
-        $final_query = "SELECT DISTINCT sqd.suggestions FROM tblcss_summary csssum LEFT JOIN tblcss_details_sqd sqd ON sqd.csssummaryid = csssum.csssummaryid JOIN tblquarters qua ON qua.quarterid = csssum.quarterid WHERE sqd.suggestions != '' AND csssum.year = ".$params['year'] . $semesteridExt . $quarteridExt . $officeidExt;
-
-        $query = $this->db->query($final_query);
-
+        
+        // Execute the query and return the result
+        $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function gen_comments($params){
+        $this->db->select('sera.servicesid, sera.name, sera.unit, GROUP_CONCAT( DISTINCT sqd.suggestions SEPARATOR ";;") AS aggregated_suggestions');
+        $this->db->from('tblservices sera');
+        $this->db->join('tblcss_summary csssum', 'csssum.servicesid = sera.servicesid', 'inner');
+        $this->db->join('tblcss_details_sqd sqd', 'sqd.csssummaryid = csssum.csssummaryid', 'inner');
+        $this->db->join('tblquarters qua', 'qua.quarterid = csssum.quarterid', 'inner');
+        $this->db->where('sqd.suggestions !=', '');
+        $this->db->where('csssum.year', $params['year']);
+
+        // Add conditions based on parameters
+        if ($params['typeselector'] === 'semester' && $params['semesterid'] != 'all') {
+            $this->db->where('qua.semesterid', $params['semesterid']);
+        }
+        if ($params['typeselector'] === 'quarter') {
+            $this->db->where('csssum.quarterid', $params['quarterid']);
+        }
+        if ($params['officeid'] != 'all') {
+            $this->db->where('csssum.officeid', $params['officeid']);
+        }
+
+        $this->db->group_by('sera.servicesid');
+
+        $query = $this->db->get();
+
+         return $query->result_array();
+
+    }
+    
 
 }
