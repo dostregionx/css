@@ -844,7 +844,7 @@ Office: <?=$officename['name']?></p>  <br>
 <script>
         // Function to trigger print dialog
         function triggerPrint() {
-            // window.print();
+            window.print();
         }
 
         // Automatically call the print function when the page loads
