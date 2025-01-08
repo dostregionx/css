@@ -803,12 +803,19 @@
                     </tbody>
                 </table>
                 <h5>Annex. Comments or suggestions from the clients or customers.</h5>
-                <div class="comments-container px-10">
-                    <ul>
+                <div class="comments-container">
                     <?php foreach ($comments as $commentsRow) { ?>
-                        <li><?=$commentsRow?></li>    
-                    <?php } ?>
-                    </ul>
+                        <h6><?php echo $commentsRow['name'] . ($commentsRow['name'] && $commentsRow['unit'] ? " - " : '') . $commentsRow['unit']; ?></h6>
+                        <ul>
+                            <?php $arr_comments =  explode(';;', $commentsRow['aggregated_suggestions']);?>
+                            <?php for ($i=0; $i < sizeof($arr_comments); $i++) { 
+                                ?>
+                                <li><?=$arr_comments[$i]?></li>
+                                <?php
+                            }?>
+                        </ul>    
+                    <?php }?>
+                    
                 </div>
             </div>
 
