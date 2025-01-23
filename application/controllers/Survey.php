@@ -39,6 +39,8 @@ class Survey extends CI_Controller
         $data['offices'] = $this->surveyModel->get_all_data('tbloffice');
         $data['services'] = $this->surveyModel->get_services($param);
         $data['clienttype'] = $this->surveyModel->get_all_data('tblclienttype');
+        $data['agegroup'] = $this->surveyModel->get_all_data('tblagegroup');
+
         
         $data['surveytype'] = 'internal';
         $this->load->view('survey/survey-form', $data);
