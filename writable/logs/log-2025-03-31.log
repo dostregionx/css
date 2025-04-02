@@ -1,0 +1,362 @@
+CRITICAL - 2025-03-31 05:26:50 --> Error: Cannot call constructor
+[Method: GET, Route: survey/external]
+in APPPATH\Controllers\SurveyController.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\SurveyController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:27:07 --> Error: Cannot call constructor
+[Method: GET, Route: survey/external]
+in APPPATH\Controllers\SurveyController.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\SurveyController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:27:50 --> Error: Call to a member function get_services() on null
+[Method: GET, Route: survey/external]
+in APPPATH\Controllers\SurveyController.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:28:59 --> Error: Call to a member function get_services() on null
+[Method: GET, Route: survey/external]
+in APPPATH\Controllers\SurveyController.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:29:00 --> Error: Call to a member function get_services() on null
+[Method: GET, Route: survey/external]
+in APPPATH\Controllers\SurveyController.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:29:00 --> Error: Call to a member function get_services() on null
+[Method: GET, Route: survey/external]
+in APPPATH\Controllers\SurveyController.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:29:33 --> CodeIgniter\Exceptions\ModelException: "App\Models\SurveyModel" model class does not specify a Primary Key.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Model.php on line 704.
+ 1 SYSTEMPATH\Model.php(704): CodeIgniter\Exceptions\ModelException::forNoPrimaryKey('App\\Models\\SurveyModel')
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:29:52 --> CodeIgniter\Exceptions\ModelException: "App\Models\SurveyModel" model class does not specify a Primary Key.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Model.php on line 704.
+ 1 SYSTEMPATH\Model.php(704): CodeIgniter\Exceptions\ModelException::forNoPrimaryKey('App\\Models\\SurveyModel')
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:30:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table('')
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:30:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:30:55 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:33:32 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:34:24 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:34:57 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 941.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\SurveyController.php(25): CodeIgniter\Model->__call('get_services', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 05:36:01 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5 in C:\xampp\htdocs\dostx_cssv3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dostx_cssv3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\dostx_cssv3\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\dostx_cssv3\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\dostx_cssv3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\dostx_cssv3\app\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dostx_cssv3\app\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services(Array)
+#6 C:\xampp\htdocs\dostx_cssv3\system\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+#7 C:\xampp\htdocs\dostx_cssv3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+#8 C:\xampp\htdocs\dostx_cssv3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\dostx_cssv3\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\dostx_cssv3\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\dostx_cssv3\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-31 05:36:01 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = :is_active:
+AND `is_external` = :is_external:
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', [...], false)
+ 2 APPPATH\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:36:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = :is_active:
+AND `is_external` = :is_external:
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', [...], false)
+ 4 APPPATH\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:36:01 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = :is_active:
+AND `is_external` = :is_external:
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', [...], false)
+ 5 APPPATH\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:36:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "survey/survey-form.php"
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('survey/survey-form.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('survey/survey-form', [], true)
+ 3 APPPATH\Controllers\SurveyController.php(34): view('survey/survey-form', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 05:37:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5 in C:\xampp\htdocs\dostx_cssv3\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dostx_cssv3\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\dostx_cssv3\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\dostx_cssv3\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\dostx_cssv3\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\dostx_cssv3\app\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dostx_cssv3\app\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services(Array)
+#6 C:\xampp\htdocs\dostx_cssv3\system\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+#7 C:\xampp\htdocs\dostx_cssv3\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+#8 C:\xampp\htdocs\dostx_cssv3\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\dostx_cssv3\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\dostx_cssv3\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\dostx_cssv3\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-31 05:37:04 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5
+[Method: GET, Route: survey/external]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = :is_active:
+AND `is_external` = :is_external:
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', [...], false)
+ 2 APPPATH\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:37:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = :is_active:
+AND `is_external` = :is_external:
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', [...], false)
+ 4 APPPATH\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 05:37:04 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`END` ASC, `unit` ASC, `name` ASC' at line 5
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tblservices`
+WHERE `is_active` = 1
+AND `is_external` = 1
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tblservices`
+WHERE `is_active` = :is_active:
+AND `is_external` = :is_external:
+ORDER BY `CASE WHEN name = "Others" THEN 1 ELSE 0` `END` ASC, `unit` ASC, `name` ASC', [...], false)
+ 5 APPPATH\Models\SurveyModel.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\SurveyController.php(25): App\Models\SurveyModel->get_services([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:09:51 --> ErrorException: Array to string conversion
+[Method: GET, Route: survey/external]
+in APPPATH\Views\survey\survey-form.php on line 529.
+ 1 APPPATH\Views\survey\survey-form.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\dostx_cssv3\\app\\Views\\survey\\survey-form.php', 529)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\dostx_cssv3\\app\\Views\\survey\\survey-form.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('survey/survey-form', [], true)
+ 5 APPPATH\Controllers\SurveyController.php(34): view('survey/survey-form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:10:01 --> ErrorException: Array to string conversion
+[Method: GET, Route: survey/external]
+in APPPATH\Views\survey\survey-form.php on line 529.
+ 1 APPPATH\Views\survey\survey-form.php(529): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\dostx_cssv3\\app\\Views\\survey\\survey-form.php', 529)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\dostx_cssv3\\app\\Views\\survey\\survey-form.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('survey/survey-form', [], true)
+ 5 APPPATH\Controllers\SurveyController.php(34): view('survey/survey-form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->external()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
