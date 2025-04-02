@@ -15,7 +15,7 @@ class HomeController extends BaseController
 
     public function index()
     {
-        return redirect()->to('/login');
+        return view('survey-start');
     }
 
     public function login()
