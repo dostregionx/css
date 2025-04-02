@@ -6,12 +6,11 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-
 $routes->get('/survey/external', 'SurveyController::external');
+$routes->get('/survey/internal', 'SurveyController::internal');
+
 $routes->post('/survey/save', 'SurveyController::save');
-
 $routes->get('thank-you', 'SurveyController::thank_you');
-
 $routes->get('/login', 'HomeController::login');
 $routes->post('/login', 'HomeController::login');
 

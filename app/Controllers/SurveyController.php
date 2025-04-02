@@ -34,11 +34,28 @@ class SurveyController extends BaseController
         return view('survey/survey-form', $data);
     }
 
+    public function internal()
+    {
+        $filter = array(
+            'is_active' => 1,
+            'is_external' => 0
+        );
+
+        $data['services'] = $this->SurveyModel->get_services($filter);
+        $data['clienttype'] = $this->SurveyModel->get_all_data('tblclienttype');
+        $data['offices'] = $this->SurveyModel->get_all_data('tbloffice');
+        $data['agegroup'] = $this->SurveyModel->get_all_data('tblagegroup');
+
+        $data['surveytype'] = 'external';
+        return view('survey/survey-form-internal', $data);
+    }
+
     public function save()
     {
         $form1data = $this->request->getPost('form1');
         $form2data = $this->request->getPost('form2');
         $form3data = $this->request->getPost('form3');
+
 
 
         
@@ -59,9 +76,6 @@ class SurveyController extends BaseController
             }
         }
 
-
-
-   
 
         // get the quarter from the form1data['date']
         $date = $form1_data_transformed['date'];

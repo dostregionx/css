@@ -49,37 +49,6 @@
                                 <div class="card shadow-lg">
                                     <div class="card-body">
                                         
-                                        <?php if ($surveytype == 'external') { ?>
-                                            <form id="frm-step-0" method="POST">
-                                                <div class="row">
-                                                        <div class="col-md-12 d-flex justify-content-center m-b-40">
-                                                            <img class="text-center w-30" src="<?=base_url('assets/images/logo/logo-big.png')?>">
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <h4 class="text-center"><b>HELP US SERVE YOU BETTER!</b></h4>
-                                                            <p class="text-dark"  style="text-align:justify;"> The <b>Client Satisfaction Measurement (CSM)</b> tracks the customer experience of government offices. Your feedback on your <u>recently concluded transaction</u> will help this office provide a better service.
-                                                                Personal Information shared will be kept confidential and you always have the option not to answer this form.
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-md-12 col-lg-12 m-t-20 ">
-                                                            <h5>I am transacting with:</h5>
-                                                            <div class="btn-group-vertical btn-group-toggle w-100" data-toggle="buttons">
-                                                                <?php
-                                                                    foreach ($offices as $officesRow) {
-                                                                        ?>
-                                                                        <label class="btn btn-primary btn-tone mb-2" onclick="enableNextButtonZero(this)">
-                                                                        <input type="radio" name="officeid" autocomplete="off" value="<?=$officesRow['officeid']?>"> <?=$officesRow['name']?>
-                                                                </label>
-                                                                        
-                                                                <?php
-                                                                    }
-                                                                ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary" id="btnFirstNext" disabled>Next</button>
-                                                </form>
-                                        <?php }?>
                                         <form id="frm-step-1" method="POST">
                                             
                                             <div class="row">
@@ -520,11 +489,13 @@
             var services = <?=json_encode($services)?>;
             var servicesUpdated = [];
 
+            enableNextButtonZero(null);
+
             $(document).ready(function () {
 
                 $('#others_remarks_container').hide();
 
-                if('<?=$surveytype?>' == 'external'){
+                if('<?=$surveytype?>' == 'internal'){
                     $("#frm-step-1").hide();
                 }else{
                     $("#frm-step-1").show();
@@ -584,29 +555,19 @@
 
             function enableNextButtonZero(element) {
             servicesUpdated = [];
-            officeid = $(element).find('input[name="officeid"]').val();
-
-            if (officeid != 1) {
 
                 var othersService = null;
                 for (var i = 0; i < services.length; i++) {
-                    if (services[i].is_psto_only == 1 || services[i].is_psto == 1) {
-                        if (services[i].name === "Others") {
-                            othersService = services[i];
-                        } else {
+                    if (1==1) {
                             servicesUpdated.push(services[i]);
-                        }
                     }
                 }
-                if (othersService) {
-                    servicesUpdated.push(othersService);
-                }
-
+    
                 var options = '<option value="">Select Service...</option>';
                 for (var i = 0; i < servicesUpdated.length; i++) {
                     options += '<option data-name="' + servicesUpdated[i].name + '" value="' + servicesUpdated[i].servicesid + '">' + servicesUpdated[i].name;
 
-                    if (servicesUpdated[i].unit != null && servicesUpdated[i].unit != '') {
+                    if ((servicesUpdated[i].unit != null && servicesUpdated[i].unit != '') && (servicesUpdated[i].name != null && servicesUpdated[i].name != '')) {
                         options += " - ";
                     }
 
@@ -617,38 +578,7 @@
                 }
                 $('#services-list').html(options);
 
-            }else{
-                var othersService = null;
-                for (var i = 0; i < services.length; i++) {
-                    if (services[i].is_psto_only == 0) {
-                        if (services[i].name === "Others") {
-                            othersService = services[i];
-                        } else {
-                            servicesUpdated.push(services[i]);
-                        }
-                    }
-                }
-                if (othersService) {
-                    servicesUpdated.push(othersService);
-                }
-                
-                var options = '<option value="">Select Service...</option>';
-                for (var i = 0; i < servicesUpdated.length; i++) {
-                    options += '<option data-name="' + servicesUpdated[i].name + '" value="' + servicesUpdated[i].servicesid + '">' + servicesUpdated[i].name;
-
-                    if ((servicesUpdated[i].unit != null && servicesUpdated[i].unit != '') && (servicesUpdated[i].name != "" && servicesUpdated[i].name != null)) {
-                        options += " - ";
-                    }
-
-                    if (servicesUpdated[i].unit != null && servicesUpdated[i].unit != '') {
-                        options += servicesUpdated[i].unit;
-                    }
-                    options += '</option>';
-                }
-                $('#services-list').html(options);
-
-            }
-
+            
             $("#btnFirstNext").prop('disabled','');
         }
 
