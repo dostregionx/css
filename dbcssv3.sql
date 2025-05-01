@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2025 at 10:23 AM
+-- Generation Time: May 01, 2025 at 11:13 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 7.3.33
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -204,7 +204,9 @@ INSERT INTO `tblcss_details_cc` (`cssdetailsccid`, `csssummaryid`, `cc1`, `cc2`,
 (1575, 1587, 4, 4, 3),
 (1576, 1588, 4, 4, 3),
 (1577, 1589, 4, 4, 3),
-(1578, 1590, 4, 4, 3);
+(1578, 1590, 4, 4, 3),
+(1579, 1591, 4, 4, 3),
+(1580, 1592, 4, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -224,6 +226,9 @@ CREATE TABLE `tblcss_details_sqd` (
   `sqd6` int(11) DEFAULT NULL,
   `sqd7` int(11) DEFAULT NULL,
   `sqd8` int(11) DEFAULT NULL,
+  `sqd9` int(11) DEFAULT NULL,
+  `sqd10` int(11) DEFAULT NULL,
+  `recommend` int(11) DEFAULT NULL,
   `email` varchar(150) DEFAULT NULL,
   `suggestions` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -232,11 +237,13 @@ CREATE TABLE `tblcss_details_sqd` (
 -- Dumping data for table `tblcss_details_sqd`
 --
 
-INSERT INTO `tblcss_details_sqd` (`cssdetailssqd`, `csssummaryid`, `sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `email`, `suggestions`) VALUES
-(1570, 1587, 5, 5, 5, 5, 3, 5, 2, 2, 3, 'jordan@email.com', 'Test Suggestions'),
-(1571, 1588, 5, 3, 5, 3, 5, 5, 3, 5, 1, 'maxv@f1.com', 'Inchedent'),
-(1572, 1589, 5, 5, 5, 5, 5, 5, 5, 5, 5, '', ''),
-(1573, 1590, 5, 5, 4, 5, 3, 3, 3, 3, 2, 'viy@payaman.com', 'aircon para cool');
+INSERT INTO `tblcss_details_sqd` (`cssdetailssqd`, `csssummaryid`, `sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sqd10`, `recommend`, `email`, `suggestions`) VALUES
+(1570, 1587, 5, 5, 5, 5, 3, 5, 2, 2, 3, NULL, NULL, NULL, 'jordan@email.com', 'Test Suggestions'),
+(1571, 1588, 5, 3, 5, 3, 5, 5, 3, 5, 1, NULL, NULL, NULL, 'maxv@f1.com', 'Inchedent'),
+(1572, 1589, 5, 5, 5, 5, 5, 5, 5, 5, 5, NULL, NULL, NULL, '', ''),
+(1573, 1590, 5, 5, 4, 5, 3, 3, 3, 3, 2, NULL, NULL, NULL, 'viy@payaman.com', 'aircon para cool'),
+(1574, 1591, 5, 5, 5, 5, 5, 5, 5, 5, 5, NULL, NULL, NULL, '', ''),
+(1575, 1592, 5, 5, 5, 5, 5, 5, 5, 5, 5, NULL, NULL, NULL, 'test@gmail.com', 'test suggg');
 
 -- --------------------------------------------------------
 
@@ -249,6 +256,8 @@ CREATE TABLE `tblcss_summary` (
   `officeid` int(11) DEFAULT NULL,
   `quarterid` int(11) DEFAULT NULL,
   `servicesid` int(11) DEFAULT NULL,
+  `typeofmarket` varchar(45) DEFAULT NULL,
+  `rstlservice_availed` varchar(45) DEFAULT NULL,
   `dost_personnel` varchar(45) DEFAULT NULL,
   `clienttypeid` int(11) DEFAULT NULL,
   `others_remarks` varchar(150) DEFAULT NULL,
@@ -268,11 +277,13 @@ CREATE TABLE `tblcss_summary` (
 -- Dumping data for table `tblcss_summary`
 --
 
-INSERT INTO `tblcss_summary` (`csssummaryid`, `officeid`, `quarterid`, `servicesid`, `dost_personnel`, `clienttypeid`, `others_remarks`, `name`, `date`, `sex`, `age`, `age_back`, `vul_sector`, `address`, `dost_info`, `year`, `date_created`) VALUES
-(1587, 2, 1, 78, 'Vench', 1, NULL, 'Jordan Stew', '2025-03-20', 'Male', 2, NULL, '4P\'s Beneficiary', 'Valencia', 'Radio', '2025', '2025-03-20 14:10:42'),
-(1588, 1, 1, 83, 'Ruel Jr', 2, 'Test Others Query', 'Max Verstappen', '2025-03-20', 'Male', 2, NULL, NULL, 'Netherlands', 'TV', '2025', '2025-03-20 14:15:08'),
-(1589, 1, 2, 72, 'Rueljr', 2, '', 'Tokyo Athena', '2025-04-02', 'Female', 1, NULL, 'Persons With Disability, 4P\'s Beneficiary', 'Bukidnon', 'Referral', '2025', '2025-04-02 09:09:19'),
-(1590, 1, 2, 83, 'Vernabels', 2, 'Secret lang', 'Viy Sakalam', '2025-04-02', 'Female', 2, NULL, '', 'Camaman-an', 'Radio', '2025', '2025-04-02 09:17:26');
+INSERT INTO `tblcss_summary` (`csssummaryid`, `officeid`, `quarterid`, `servicesid`, `typeofmarket`, `rstlservice_availed`, `dost_personnel`, `clienttypeid`, `others_remarks`, `name`, `date`, `sex`, `age`, `age_back`, `vul_sector`, `address`, `dost_info`, `year`, `date_created`) VALUES
+(1587, 2, 1, 78, NULL, NULL, 'Vench', 1, NULL, 'Jordan Stew', '2025-03-20', 'Male', 2, NULL, '4P\'s Beneficiary', 'Valencia', 'Radio', '2025', '2025-03-20 14:10:42'),
+(1588, 1, 1, 83, NULL, NULL, 'Ruel Jr', 2, 'Test Others Query', 'Max Verstappen', '2025-03-20', 'Male', 2, NULL, NULL, 'Netherlands', 'TV', '2025', '2025-03-20 14:15:08'),
+(1589, 1, 2, 72, NULL, NULL, 'Rueljr', 2, '', 'Tokyo Athena', '2025-04-02', 'Female', 1, NULL, 'Persons With Disability, 4P\'s Beneficiary', 'Bukidnon', 'Referral', '2025', '2025-04-02 09:09:19'),
+(1590, 1, 2, 83, NULL, NULL, 'Vernabels', 2, 'Secret lang', 'Viy Sakalam', '2025-04-02', 'Female', 2, NULL, '', 'Camaman-an', 'Radio', '2025', '2025-04-02 09:17:26'),
+(1591, 0, 2, 21, NULL, NULL, 'JR', 1, '', 'asdasd1', '2025-04-02', 'Male', 2, NULL, '', 'asdasdada', '', '2025', '2025-04-03 01:42:05'),
+(1592, 0, 2, 35, NULL, NULL, 'Ramil', 3, '', 'JR', '2025-04-02', 'Male', 2, NULL, 'Senior Citizen', 'Carmen', 'Radio', '2025', '2025-04-03 01:43:25');
 
 -- --------------------------------------------------------
 
@@ -620,19 +631,19 @@ ALTER TABLE `tblclienttype`
 -- AUTO_INCREMENT for table `tblcss_details_cc`
 --
 ALTER TABLE `tblcss_details_cc`
-  MODIFY `cssdetailsccid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1579;
+  MODIFY `cssdetailsccid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1581;
 
 --
 -- AUTO_INCREMENT for table `tblcss_details_sqd`
 --
 ALTER TABLE `tblcss_details_sqd`
-  MODIFY `cssdetailssqd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1574;
+  MODIFY `cssdetailssqd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1576;
 
 --
 -- AUTO_INCREMENT for table `tblcss_summary`
 --
 ALTER TABLE `tblcss_summary`
-  MODIFY `csssummaryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1591;
+  MODIFY `csssummaryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1593;
 
 --
 -- AUTO_INCREMENT for table `tblsemesters`
