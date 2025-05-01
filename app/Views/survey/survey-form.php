@@ -35,6 +35,30 @@
                 color: white;
                 background-color: #3f87f5 !important;
             }
+
+            .radio-toolbar {
+                text-align: center;
+            }
+            .radio-toolbar input[type="radio"] {
+                display: none;
+                text-align: center;
+            }
+
+            .radio-toolbar label {
+                display: inline-block;
+                background-color: #ddd;
+                padding: 8px 3%;
+                font-size: 16px;
+                cursor: pointer;
+                color: #53535f;
+                text-align: center;
+            }
+
+            .radio-toolbar input[type="radio"]:checked+label {
+                background-color: #007bff;
+                color: white;
+
+            }
             
         </style>
         <script>var BASE_URL = '<?=base_url()?>'; </script>
@@ -60,6 +84,30 @@
                                                             <p class="text-dark"  style="text-align:justify;"> The <b>Client Satisfaction Measurement (CSM)</b> tracks the customer experience of government offices. Your feedback on your <u>recently concluded transaction</u> will help this office provide a better service.
                                                                 Personal Information shared will be kept confidential and you always have the option not to answer this form.
                                                             </p>
+                                                            <h5 class="mb-3 text-dark">Privacy Notice</h5>
+                                        <p class="text-dark"><b>Introduction</b></p>
+                                        <p class="text-dark mb-4">
+                                            This Privacy Notice details what information we collect, why we collect it, and what we do with it. <br />
+                                            Before you enter any personal information, please make sure that you have read and fully understood this Notice.
+                                        </p>
+                                        <p class="text-dark"><b>Data Collection</b></p>
+                                        <p class="text-dark mb-4">
+                                            The Department of Science and Technology - Region 10 remain committed to fulfilling its mission of providing science, technology, and innovation-based solutions anchored on ethical public service,
+                                            contributing to a better quality of life in the Region. To this end, it collects data and information, including personal information, from various subjects, which may be used to identify the needs
+                                            and opportunities in science, technology, and innovation in the Region. These data/information may also be used to improve further our Agency's programs and services.
+                                        </p>
+                                        <p class="text-dark"><b>Data Use</b></p>
+                                        <p class="text-dark mb-4">This form serves as a means to collect information of the customers for production of statistical results.</p>
+                                        <p class="text-dark"><b>List of Data to be Collected</b></p>
+                                        <p class="text-dark mb-4">
+                                        Name <br> Sex <br>Age <br>Address <br>Privileges <br>Email Address
+                                        </p>
+                                        <p class="text-dark"><b>Access and Correction</b></p>
+                                        <p class="text-dark mb-4">
+                                            All information we collect are treated with utmost confidentiality. Only authorized DOST-X personnel have access to the personal information collected. You have the right to ask for a copy of any
+                                            personal information the DOST-X holds about you, as well as the right to ask for its correction, if found erroneous, or deletion on reasonable grounds.
+                                        </p>
+
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 m-t-20 ">
                                                             <h5>I am transacting with:</h5>
@@ -98,10 +146,32 @@
                                                     <select class="form-control" onchange="change_service(this)" class="form-control" name="servicesid" id="services-list" required>
                                                     </select>
                                                 </div>
+                                                
+                                                <div class="form-group laboratory_services_container">
+                                                    <label for="inputAddress"><b>Type of Market:</b> <span class="text-danger">*</span></label>
+                                                    <select class="form-control" name="typeofmarket" id="seltypeofmarket">
+                                                        <option value="">Select type of market...</option>
+                                                        <option value="Local">Local</option>
+                                                        <option value="Export">Export</option>
+                                                        <option value="Both">Both</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group laboratory_services_container">
+                                                    <label for="others_remarks"><b>What service/s of the RSTL have you availed?</b> <span class="text-danger">*</span></label>
+                                                    <select class="form-control" name="rstlservice_availed" id="selrstlservice_availed">
+                                                        <option value="">Select RSTL service...</option>
+                                                        <option value="Microbiological Testing">Microbiological Testing</option>
+                                                        <option value="Chemical Testing">Chemical Testing</option>
+                                                        <option value="Calibration">Calibration</option>
+                                                        <option value="Shelf-life Testing">Shelf-life Testing</option>
+                                                        <option value="Materials Testing">Materials Testing</option>
+                                                    </select>
+                                                </div>
                                                 <div class="form-group" id="others_remarks_container">
                                                     <label for="others_remarks"><b>Others:</b> <span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" id="others_remarks" name="others_remarks" placeholder="Please specify" required/>
                                                 </div>
+                                                
                                                 <div class="form-group">
                                                     <label for="attending-dost-personnel"><b>Attending DOST Personnel:</b> <span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" id="attending-dost-personnel" name="dost_personnel" placeholder="Enter attending DOST personnel" required/>
@@ -483,7 +553,69 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="suggestions"><b>Suggestions on how we can further improve our services:</b> <small>(optional)</small></label>
+                                                    <label for="sqd9"><b>SQD9. The services were provided at the promised time.</b> <span class="text-danger">*</span></label>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd9_strongly_agree" name="sqd9" value="5" checked />
+                                                        <label for="sqd9_strongly_agree">Strongly Agree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd9_agree" name="sqd9" value="4" />
+                                                        <label for="sqd9_agree">Agree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd9_neither" name="sqd9" value="3" />
+                                                        <label for="sqd9_neither">Neither Agree nor Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd9_disagree" name="sqd9" value="2" />
+                                                        <label for="sqd9_disagree">Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd9_strongly_disagree" name="sqd9" value="1" />
+                                                        <label for="sqd9_strongly_disagree">Strongly Disagree</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="sq10"><b>SQD10. The services that I received are accurate.</b> <span class="text-danger">*</span></label>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sq10_strongly_agree" name="sq10" value="5" checked />
+                                                        <label for="sq10_strongly_agree">Strongly Agree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sq10_agree" name="sq10" value="4" />
+                                                        <label for="sq10_agree">Agree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sq10_neither" name="sq10" value="3" />
+                                                        <label for="sq10_neither">Neither Agree nor Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sq10_disagree" name="sq10" value="2" />
+                                                        <label for="sq10_disagree">Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sq10_strongly_disagree" name="sq10" value="1" />
+                                                        <label for="sq10_strongly_disagree">Strongly Disagree</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputEmail4">
+                                                        <b>How likely is it that you would recommend our services to others? <small class="text-danger">*</small></b> <br />
+                                                    </label>
+                                                    <fieldset class="radio-toolbar mt-3">
+                                                        <?php
+                                                            for ($i = 1; $i <= 10; $i++) {
+                                                                ?>
+                                                                <input type="radio" id="recommend<?=$i?>" name="recommend" value="<?=$i?>" >
+                                                                <label for="recommend<?=$i?>"><?=$i?></label>
+                                                                <?php
+                                                            }
+                                                        ?>
+                                                        <p class="text-left">Strongly Disagree <span class="float-right">Strongly Agree</span></p>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="suggestions"><b>Suggestions on how we can further improve our services or other services that you additionally require:</b> <small>(optional)</small></label>
                                                     <textarea class="form-control" id="suggestions" name="suggestions"></textarea>
                                                 </div>
                                                 <div class="form-group">
@@ -499,7 +631,7 @@
                         </div>
                     </div>
                     <div class="d-none d-md-flex p-h-40 justify-content-between">
-                        <span class="">2024 DOST 10 - ROCJ</span>
+                        <span class="">2024. Developed by DOST 10 - MIS Unit.</span>
                     </div>
                 </div>
             </div>
@@ -523,6 +655,8 @@
             $(document).ready(function () {
 
                 $('#others_remarks_container').hide();
+                $('.laboratory_services_container').hide();
+
 
                 if('<?=$surveytype?>' == 'external'){
                     $("#frm-step-1").hide();
@@ -660,10 +794,29 @@
                 $('#others_remarks_container').show();
                 $('#others_remarks').attr('required', true);
                 $('#others_remarks').val('');
-            } else {
+                $('#seltypeofmarket').attr('required', false);
+                $('#selrstlservice_availed').attr('required', false);
+                $('#seltypeofmarket').val('');
+                $('#selrstlservice_availed').val('');
+            } 
+
+            if (selectedName == "Laboratory Services") {
+                $('.laboratory_services_container').show();
+                $('#seltypeofmarket').attr('required', true);
+                $('#selrstlservice_availed').attr('required', true);
+                $('#seltypeofmarket').val('');
+                $('#selrstlservice_availed').val('');
+            } 
+
+            if(selectedName != "Others" && selectedName != "Laboratory Services") {
                 $('#others_remarks_container').hide();
+                $('.laboratory_services_container').hide();
                 $('#others_remarks').attr('required', false);
+                $('#seltypeofmarket').attr('required', false);
+                $('#selrstlservice_availed').attr('required', false);
                 $('#others_remarks').val('');
+                $('#seltypeofmarket').val('');
+                $('#selrstlservice_availed').val('');
             }
         }
         </script>
