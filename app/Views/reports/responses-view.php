@@ -84,36 +84,41 @@
             </div>
             <div class="m-t-25">
                 <div class="table-responsive">
-                    <table class="table table-hover" id="data-table">
+                    <table class="table table-hover table-sm" id="data-table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Service Availed</th>
-                                <th scope="col">Others Remarks</th>
-                                <th scope="col">DOST Personnel</th>
-                                <th scope="col">Client Type</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Sex</th>
-                                <th scope="col">Age</th>
-                                <th scope="col">Vulnerable Sector</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">How did you know DOST?</th>
-                                <th scope="col">CC1</th>
-                                <th scope="col">CC2</th>
-                                <th scope="col">CC3</th>
-                                <th scope="col">SQD0</th>
-                                <th scope="col">SQD1</th>
-                                <th scope="col">SQD2</th>
-                                <th scope="col">SQD3</th>
-                                <th scope="col">SQD4</th>
-                                <th scope="col">SQD5</th>
-                                <th scope="col">SQD6</th>
-                                <th scope="col">SQD7</th>
-                                <th scope="col">SQD8</th>
-                                <th scope="col">Suggestions</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Date Created</th>
+                                <th scope="col"><small>No.</small></th>
+                                <th scope="col"><small>Service Availed</small></th>
+                                <th scope="col"><small>Others Remarks</small></th>
+                                <th scope="col"><small>Type of Market <small>(RSTL)</small></small></th>
+                                <th scope="col"><small>What service/s of the RSTL have you availed? <small>(RSTL)</small></small></th>
+                                <th scope="col"><small>Attending DOST Personnel</small></th>
+                                <th scope="col"><small>Client Type</small></th>
+                                <th scope="col"><small>Client Name</small></th>
+                                <th scope="col"><small>Date</small></th>
+                                <th scope="col"><small>Sex</small></th>
+                                <th scope="col"><small>Age</small></th>
+                                <th scope="col"><small>Vulnerable Sector</small></th>
+                                <th scope="col"><small>Address (City/Municipality)</small></th>
+                                <th scope="col"><small>How did you know DOST?</small></th>
+                                <th scope="col"><small>CC1: Which of the following best describes your awareness of a Citizen's Charter?</small></th>
+                                <th scope="col"><small>CC2: If aware of Citizen's Charter (answered 1-3 in CC1), would you say that the Citizen's Charter of this office was ...?</small></th>
+                                <th scope="col"><small>CC3: If aware of Citizen's Charter (answered 1-3 in CC1), how much did the Citizen's Charter help you in your transaction?</small></th>
+                                <th scope="col"><small>SQD0. I am satisfied with the service that I availed.</small></th>
+                                <th scope="col"><small>SQD1. I spent a reasonable amount of time for my transaction.</small></th>
+                                <th scope="col"><small>SQD2. The office followed the transaction's requirements and steps based on the information provided.</small></th>
+                                <th scope="col"><small>SQD3. The steps I needed to do for my transaction were easy.</small></th>
+                                <th scope="col"><small>SQD4. I easily found information about my transaction from the office or its website.</small></th>
+                                <th scope="col"><small>SQD5. I paid an acceptable amount of fees for my transaction.</small></th>
+                                <th scope="col"><small>SQD6. I am confident my online transaction was secure.</small></th>
+                                <th scope="col"><small>SQD7. I was treated courteously by the staff, and (if asked for help) the staff was helpful.</small></th>
+                                <th scope="col"><small>SQD8. I got what I needed from the government office.</small></th>
+                                <th scope="col"><small>SQD9. The services were provided at the promised time.</small></th>
+                                <th scope="col"><small>SQD10. The services that I received are accurate.</small></th>
+                                <th scope="col"><small>How likely is it that you would recommend our services to others?</small></th>
+                                <th scope="col"><small>Suggestions on how we can further improve our services or other services that you additionally require:</small></th>
+                                <th scope="col"><small>Email Address</small></th>
+                                <th scope="col"><small>Date Submitted</small></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -127,6 +132,8 @@
                                             if($reponsesRow['service_unit'] != null || $reponsesRow['service_unit'] != '') { echo " - ".$reponsesRow['service_unit']; }else{ echo ""; } ?>
                                     </td>
                                     <td><?=$reponsesRow['others_remarks']?></td>
+                                    <td><?=$reponsesRow['typeofmarket']?></td>
+                                    <td><?=$reponsesRow['rstlservice_availed']?></td>
                                     <td><?=$reponsesRow['dost_personnel']?></td>
                                     <td><?=$reponsesRow['client_type_name']?></td>
                                     <td><?=$reponsesRow['summary_name']?></td>
@@ -140,7 +147,6 @@
                                     <td><?=$reponsesRow['cc2']?></td>
                                     <td><?=$reponsesRow['cc3']?></td>
 
-
                                     <td><?=$reponsesRow['sqd0']?></td>
                                     <td><?=$reponsesRow['sqd1']?></td>
                                     <td><?=$reponsesRow['sqd2']?></td>
@@ -150,6 +156,10 @@
                                     <td><?=$reponsesRow['sqd6']?></td>
                                     <td><?=$reponsesRow['sqd7']?></td>
                                     <td><?=$reponsesRow['sqd8']?></td>
+                                    <td><?=$reponsesRow['sqd9']?></td>
+                                    <td><?=$reponsesRow['sqd10']?></td>
+
+                                    <td><?=$reponsesRow['recommend']?></td>
                                     <td><?=$reponsesRow['suggestions']?></td>
                                     <td><?=$reponsesRow['sqd_email']?></td>
                                     <td><?=date('F j, Y h:i A',strtotime($reponsesRow['summary_date_created']))?></td>

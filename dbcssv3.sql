@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2025 at 11:13 PM
+-- Generation Time: May 02, 2025 at 08:00 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,124 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbcssv3`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cache`
---
-
-CREATE TABLE `cache` (
-  `key` varchar(255) NOT NULL,
-  `value` mediumtext NOT NULL,
-  `expiration` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cache_locks`
---
-
-CREATE TABLE `cache_locks` (
-  `key` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
-  `expiration` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jobs`
---
-
-CREATE TABLE `jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `queue` varchar(255) NOT NULL,
-  `payload` longtext NOT NULL,
-  `attempts` tinyint(3) UNSIGNED NOT NULL,
-  `reserved_at` int(10) UNSIGNED DEFAULT NULL,
-  `available_at` int(10) UNSIGNED NOT NULL,
-  `created_at` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `job_batches`
---
-
-CREATE TABLE `job_batches` (
-  `id` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `total_jobs` int(11) NOT NULL,
-  `pending_jobs` int(11) NOT NULL,
-  `failed_jobs` int(11) NOT NULL,
-  `failed_job_ids` longtext NOT NULL,
-  `options` mediumtext DEFAULT NULL,
-  `cancelled_at` int(11) DEFAULT NULL,
-  `created_at` int(11) NOT NULL,
-  `finished_at` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '0001_01_01_000001_create_cache_table', 1),
-(2, '0001_01_01_000002_create_jobs_table', 1),
-(3, '2025_03_17_023408_create_sessions_table', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sessions`
---
-
-CREATE TABLE `sessions` (
-  `id` varchar(255) NOT NULL,
-  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `user_agent` text DEFAULT NULL,
-  `payload` longtext NOT NULL,
-  `last_activity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('cxeAnMRfIpp0DcBs5aB5t2Jz7v968hKMv9libRHn', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibGJUWVdXZzd0WTNOOVFIMDZab243R1hucFpqZHlvQkRsRG42VUpzZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcGkvc2VtZXN0ZXJzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1743144774);
 
 -- --------------------------------------------------------
 
@@ -196,18 +78,6 @@ CREATE TABLE `tblcss_details_cc` (
   `cc3` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tblcss_details_cc`
---
-
-INSERT INTO `tblcss_details_cc` (`cssdetailsccid`, `csssummaryid`, `cc1`, `cc2`, `cc3`) VALUES
-(1575, 1587, 4, 4, 3),
-(1576, 1588, 4, 4, 3),
-(1577, 1589, 4, 4, 3),
-(1578, 1590, 4, 4, 3),
-(1579, 1591, 4, 4, 3),
-(1580, 1592, 4, 4, 3);
-
 -- --------------------------------------------------------
 
 --
@@ -232,18 +102,6 @@ CREATE TABLE `tblcss_details_sqd` (
   `email` varchar(150) DEFAULT NULL,
   `suggestions` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblcss_details_sqd`
---
-
-INSERT INTO `tblcss_details_sqd` (`cssdetailssqd`, `csssummaryid`, `sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sqd10`, `recommend`, `email`, `suggestions`) VALUES
-(1570, 1587, 5, 5, 5, 5, 3, 5, 2, 2, 3, NULL, NULL, NULL, 'jordan@email.com', 'Test Suggestions'),
-(1571, 1588, 5, 3, 5, 3, 5, 5, 3, 5, 1, NULL, NULL, NULL, 'maxv@f1.com', 'Inchedent'),
-(1572, 1589, 5, 5, 5, 5, 5, 5, 5, 5, 5, NULL, NULL, NULL, '', ''),
-(1573, 1590, 5, 5, 4, 5, 3, 3, 3, 3, 2, NULL, NULL, NULL, 'viy@payaman.com', 'aircon para cool'),
-(1574, 1591, 5, 5, 5, 5, 5, 5, 5, 5, 5, NULL, NULL, NULL, '', ''),
-(1575, 1592, 5, 5, 5, 5, 5, 5, 5, 5, 5, NULL, NULL, NULL, 'test@gmail.com', 'test suggg');
 
 -- --------------------------------------------------------
 
@@ -272,18 +130,6 @@ CREATE TABLE `tblcss_summary` (
   `year` year(4) DEFAULT NULL,
   `date_created` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tblcss_summary`
---
-
-INSERT INTO `tblcss_summary` (`csssummaryid`, `officeid`, `quarterid`, `servicesid`, `typeofmarket`, `rstlservice_availed`, `dost_personnel`, `clienttypeid`, `others_remarks`, `name`, `date`, `sex`, `age`, `age_back`, `vul_sector`, `address`, `dost_info`, `year`, `date_created`) VALUES
-(1587, 2, 1, 78, NULL, NULL, 'Vench', 1, NULL, 'Jordan Stew', '2025-03-20', 'Male', 2, NULL, '4P\'s Beneficiary', 'Valencia', 'Radio', '2025', '2025-03-20 14:10:42'),
-(1588, 1, 1, 83, NULL, NULL, 'Ruel Jr', 2, 'Test Others Query', 'Max Verstappen', '2025-03-20', 'Male', 2, NULL, NULL, 'Netherlands', 'TV', '2025', '2025-03-20 14:15:08'),
-(1589, 1, 2, 72, NULL, NULL, 'Rueljr', 2, '', 'Tokyo Athena', '2025-04-02', 'Female', 1, NULL, 'Persons With Disability, 4P\'s Beneficiary', 'Bukidnon', 'Referral', '2025', '2025-04-02 09:09:19'),
-(1590, 1, 2, 83, NULL, NULL, 'Vernabels', 2, 'Secret lang', 'Viy Sakalam', '2025-04-02', 'Female', 2, NULL, '', 'Camaman-an', 'Radio', '2025', '2025-04-02 09:17:26'),
-(1591, 0, 2, 21, NULL, NULL, 'JR', 1, '', 'asdasd1', '2025-04-02', 'Male', 2, NULL, '', 'asdasdada', '', '2025', '2025-04-03 01:42:05'),
-(1592, 0, 2, 35, NULL, NULL, 'Ramil', 3, '', 'JR', '2025-04-02', 'Male', 2, NULL, 'Senior Citizen', 'Carmen', 'Radio', '2025', '2025-04-03 01:43:25');
 
 -- --------------------------------------------------------
 
@@ -422,7 +268,7 @@ INSERT INTO `tblservices` (`servicesid`, `name`, `unit`, `is_external`, `is_acti
 (81, 'Project Funds', 'LGIA-CEST', 1, 1, 0, 1, 1),
 (82, 'Technology Needs Assessment', 'SETUP', 1, 1, 0, 1, 1),
 (83, 'Others', NULL, 1, 1, 0, 1, 0),
-(84, 'Laboratory Services', NULL, 1, 1, 0, 1, 0);
+(84, 'Laboratory Services', NULL, 1, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -443,7 +289,7 @@ CREATE TABLE `tblusers` (
 --
 
 INSERT INTO `tblusers` (`userid`, `officeid`, `username`, `password`, `usertype`) VALUES
-(2, 1, 'admin', '$2y$10$l87NPuCWxgFV257NjIZZ3.jRaFDXWhb46Sgjb67021UfQIWD9/dyW', 'admin');
+(2, 1, 'admin', '$2y$10$AsNcWA7eQNX7ze.MFY5Zyu3VXGkAFJS0zKRkzgOmRyp3.E6bqVQcm', 'admin');
 
 -- --------------------------------------------------------
 
@@ -472,52 +318,6 @@ INSERT INTO `_tblagedist` (`agedistid`, `agedist`, `low`, `high`) VALUES
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `cache`
---
-ALTER TABLE `cache`
-  ADD PRIMARY KEY (`key`);
-
---
--- Indexes for table `cache_locks`
---
-ALTER TABLE `cache_locks`
-  ADD PRIMARY KEY (`key`);
-
---
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
--- Indexes for table `jobs`
---
-ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `jobs_queue_index` (`queue`);
-
---
--- Indexes for table `job_batches`
---
-ALTER TABLE `job_batches`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sessions_user_id_index` (`user_id`),
-  ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
 -- Indexes for table `tblagegroup`
@@ -598,24 +398,6 @@ ALTER TABLE `_tblagedist`
 --
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `jobs`
---
-ALTER TABLE `jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `tblagegroup`
 --
 ALTER TABLE `tblagegroup`
@@ -631,19 +413,19 @@ ALTER TABLE `tblclienttype`
 -- AUTO_INCREMENT for table `tblcss_details_cc`
 --
 ALTER TABLE `tblcss_details_cc`
-  MODIFY `cssdetailsccid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1581;
+  MODIFY `cssdetailsccid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblcss_details_sqd`
 --
 ALTER TABLE `tblcss_details_sqd`
-  MODIFY `cssdetailssqd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1576;
+  MODIFY `cssdetailssqd` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblcss_summary`
 --
 ALTER TABLE `tblcss_summary`
-  MODIFY `csssummaryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1593;
+  MODIFY `csssummaryid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tblsemesters`
@@ -677,7 +459,7 @@ ALTER TABLE `_tblagedist`
 -- Constraints for table `tblcss_details_cc`
 --
 ALTER TABLE `tblcss_details_cc`
-  ADD CONSTRAINT `csssummaryid_fk` FOREIGN KEY (`csssummaryid`) REFERENCES `tblcss_summary` (`csssummaryid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `csssummaryid_fk` FOREIGN KEY (`csssummaryid`) REFERENCES `tblcss_summary` (`csssummaryid`);
 
 --
 -- Constraints for table `tblcss_details_sqd`

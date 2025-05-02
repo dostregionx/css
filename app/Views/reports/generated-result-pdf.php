@@ -688,13 +688,15 @@ Office: <?=$officename['name']?></p>  <br>
                 generateRow('Integrity', $sqd, 'SQD6');
                 generateRow('Assurance', $sqd, 'SQD7');
                 generateRow('Outcome', $sqd, 'SQD8');
+                generateRow('Reliability', $sqd, 'SQD9');
+                generateRow('Accuracy', $sqd, 'SQD10');
                 ?>
             <tr>
     <td><b>Overall</b></td>
     <td class="text-center">
         <?php 
         $overall_sum = $sum_5 = 0; 
-        for ($i = 1; $i <= 8; $i++) { 
+        for ($i = 1; $i <= 10; $i++) { 
             $sum_5 += isset($sqd['5_SQD' . $i]) ? $sqd['5_SQD' . $i] : 0;
         } 
         $overall_sum += $sum_5; 
@@ -704,7 +706,7 @@ Office: <?=$officename['name']?></p>  <br>
     <td class="text-center">
         <?php 
         $sum_4 = 0; 
-        for ($i = 1; $i <= 8; $i++) { 
+        for ($i = 1; $i <= 10; $i++) { 
             $sum_4 += isset($sqd['4_SQD' . $i]) ? $sqd['4_SQD' . $i] : 0;
         } 
         $overall_sum += $sum_4;
@@ -714,7 +716,7 @@ Office: <?=$officename['name']?></p>  <br>
     <td class="text-center">
         <?php 
         $sum_3 = 0; 
-        for ($i = 1; $i <= 8; $i++) { 
+        for ($i = 1; $i <= 10; $i++) { 
             $sum_3 += isset($sqd['3_SQD' . $i]) ? $sqd['3_SQD' . $i] : 0;
         } 
         $overall_sum += $sum_3;
@@ -724,7 +726,7 @@ Office: <?=$officename['name']?></p>  <br>
     <td class="text-center">
         <?php 
         $sum_2 = 0; 
-        for ($i = 1; $i <= 8; $i++) { 
+        for ($i = 1; $i <= 10; $i++) { 
             $sum_2 += isset($sqd['2_SQD' . $i]) ? $sqd['2_SQD' . $i] : 0;
         } 
         $overall_sum += $sum_2; 
@@ -734,7 +736,7 @@ Office: <?=$officename['name']?></p>  <br>
     <td class="text-center">
         <?php 
         $sum_1 = 0; 
-        for ($i = 1; $i <= 8; $i++) { 
+        for ($i = 1; $i <= 10; $i++) { 
             $sum_1 += isset($sqd['1_SQD' . $i]) ? $sqd['1_SQD' . $i] : 0;
         } 
         $overall_sum += $sum_1;

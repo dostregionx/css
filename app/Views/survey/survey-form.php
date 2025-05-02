@@ -85,29 +85,28 @@
                                                                 Personal Information shared will be kept confidential and you always have the option not to answer this form.
                                                             </p>
                                                             <h5 class="mb-3 text-dark">Privacy Notice</h5>
-                                        <p class="text-dark"><b>Introduction</b></p>
-                                        <p class="text-dark mb-4">
-                                            This Privacy Notice details what information we collect, why we collect it, and what we do with it. <br />
-                                            Before you enter any personal information, please make sure that you have read and fully understood this Notice.
-                                        </p>
-                                        <p class="text-dark"><b>Data Collection</b></p>
-                                        <p class="text-dark mb-4">
-                                            The Department of Science and Technology - Region 10 remain committed to fulfilling its mission of providing science, technology, and innovation-based solutions anchored on ethical public service,
-                                            contributing to a better quality of life in the Region. To this end, it collects data and information, including personal information, from various subjects, which may be used to identify the needs
-                                            and opportunities in science, technology, and innovation in the Region. These data/information may also be used to improve further our Agency's programs and services.
-                                        </p>
-                                        <p class="text-dark"><b>Data Use</b></p>
-                                        <p class="text-dark mb-4">This form serves as a means to collect information of the customers for production of statistical results.</p>
-                                        <p class="text-dark"><b>List of Data to be Collected</b></p>
-                                        <p class="text-dark mb-4">
-                                        Name <br> Sex <br>Age <br>Address <br>Privileges <br>Email Address
-                                        </p>
-                                        <p class="text-dark"><b>Access and Correction</b></p>
-                                        <p class="text-dark mb-4">
-                                            All information we collect are treated with utmost confidentiality. Only authorized DOST-X personnel have access to the personal information collected. You have the right to ask for a copy of any
-                                            personal information the DOST-X holds about you, as well as the right to ask for its correction, if found erroneous, or deletion on reasonable grounds.
-                                        </p>
-
+                                                                <p class="text-dark"><b>Introduction</b></p>
+                                                                <p class="text-dark mb-4">
+                                                                    This Privacy Notice details what information we collect, why we collect it, and what we do with it. <br />
+                                                                    Before you enter any personal information, please make sure that you have read and fully understood this Notice.
+                                                                </p>
+                                                                <p class="text-dark"><b>Data Collection</b></p>
+                                                                <p class="text-dark mb-4">
+                                                                    The Department of Science and Technology - Region 10 remain committed to fulfilling its mission of providing science, technology, and innovation-based solutions anchored on ethical public service,
+                                                                    contributing to a better quality of life in the Region. To this end, it collects data and information, including personal information, from various subjects, which may be used to identify the needs
+                                                                    and opportunities in science, technology, and innovation in the Region. These data/information may also be used to improve further our Agency's programs and services.
+                                                                </p>
+                                                                <p class="text-dark"><b>Data Use</b></p>
+                                                                <p class="text-dark mb-4">This form serves as a means to collect information of the customers for production of statistical results.</p>
+                                                                <p class="text-dark"><b>List of Data to be Collected</b></p>
+                                                                <p class="text-dark mb-4">
+                                                                Name <br> Sex <br>Age <br>Address <br>Privileges <br>Email Address
+                                                                </p>
+                                                                <p class="text-dark"><b>Access and Correction</b></p>
+                                                                <p class="text-dark mb-4">
+                                                                    All information we collect are treated with utmost confidentiality. Only authorized DOST-X personnel have access to the personal information collected. You have the right to ask for a copy of any
+                                                                    personal information the DOST-X holds about you, as well as the right to ask for its correction, if found erroneous, or deletion on reasonable grounds.
+                                                                </p>
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 m-t-20 ">
                                                             <h5>I am transacting with:</h5>
@@ -115,7 +114,7 @@
                                                                 <?php
                                                                     foreach ($offices as $officesRow) {
                                                                         ?>
-                                                                        <label class="btn btn-primary btn-tone mb-2" onclick="enableNextButtonZero(this)">
+                                                                        <label class="btn btn-primary btn-tone mb-2 py-3" onclick="enableNextButtonZero(this)">
                                                                         <input type="radio" name="officeid" autocomplete="off" value="<?=$officesRow['officeid']?>"> <?=$officesRow['name']?>
                                                                 </label>
                                                                         
@@ -576,26 +575,26 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sq10"><b>SQD10. The services that I received are accurate.</b> <span class="text-danger">*</span></label>
+                                                    <label for="sqd10"><b>SQD10. The services that I received are accurate.</b> <span class="text-danger">*</span></label>
                                                     <div class="radio">
-                                                        <input type="radio" id="sq10_strongly_agree" name="sq10" value="5" checked />
-                                                        <label for="sq10_strongly_agree">Strongly Agree</label>
+                                                        <input type="radio" id="sqd10_strongly_agree" name="sqd10" value="5" checked />
+                                                        <label for="sqd10_strongly_agree">Strongly Agree</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <input type="radio" id="sq10_agree" name="sq10" value="4" />
-                                                        <label for="sq10_agree">Agree</label>
+                                                        <input type="radio" id="sqd10_agree" name="sqd10" value="4" />
+                                                        <label for="sqd10_agree">Agree</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <input type="radio" id="sq10_neither" name="sq10" value="3" />
-                                                        <label for="sq10_neither">Neither Agree nor Disagree</label>
+                                                        <input type="radio" id="sqd10_neither" name="sqd10" value="3" />
+                                                        <label for="sqd10_neither">Neither Agree nor Disagree</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <input type="radio" id="sq10_disagree" name="sq10" value="2" />
-                                                        <label for="sq10_disagree">Disagree</label>
+                                                        <input type="radio" id="sqd10_disagree" name="sqd10" value="2" />
+                                                        <label for="sqd10_disagree">Disagree</label>
                                                     </div>
                                                     <div class="radio">
-                                                        <input type="radio" id="sq10_strongly_disagree" name="sq10" value="1" />
-                                                        <label for="sq10_strongly_disagree">Strongly Disagree</label>
+                                                        <input type="radio" id="sqd10_strongly_disagree" name="sqd10" value="1" />
+                                                        <label for="sqd10_strongly_disagree">Strongly Disagree</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -606,7 +605,7 @@
                                                         <?php
                                                             for ($i = 1; $i <= 10; $i++) {
                                                                 ?>
-                                                                <input type="radio" id="recommend<?=$i?>" name="recommend" value="<?=$i?>" >
+                                                                <input type="radio" id="recommend<?=$i?>" name="recommend" value="<?=$i?>" <?= $i == 10 ? 'checked' : '' ?>>
                                                                 <label for="recommend<?=$i?>"><?=$i?></label>
                                                                 <?php
                                                             }
@@ -806,6 +805,9 @@
                 $('#selrstlservice_availed').attr('required', true);
                 $('#seltypeofmarket').val('');
                 $('#selrstlservice_availed').val('');
+                $('#others_remarks_container').hide();
+                $('#others_remarks').attr('required', false);
+                $('#others_remarks').val('');
             } 
 
             if(selectedName != "Others" && selectedName != "Laboratory Services") {

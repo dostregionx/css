@@ -61,10 +61,10 @@
                                                             </p>
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 m-t-20 ">
-                                                            <h5>I am transacting with:</h5>
+                                                            <!-- <h5>I am transacting with:</h5> -->
                                                             <div class="btn-group-vertical btn-group-toggle w-100">
-                                                            <a class="btn btn-primary mb-2" href="<?=base_url('survey/external')?>">External Client</a>
-                                                            <a class="btn btn-info btn-tone" href="<?=base_url('survey/internal')?>">Internal Client</a>
+                                                            <a class="btn btn-primary mb-2 py-3" href="<?=base_url('survey/external')?>">External Client</a>
+                                                            <a class="btn btn-primary mb-2 py-3" href="<?=base_url('survey/internal')?>">Internal Client</a>
                                                             </div>
                                                         </div>
                                                     </div>

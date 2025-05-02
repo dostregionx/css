@@ -57,7 +57,7 @@ class SurveyController extends BaseController
         $form3data = $this->request->getPost('form3');
 
 
-
+        
         
         // START PROCESS FORM1
         $form1_data_transformed = array();
@@ -104,7 +104,11 @@ class SurveyController extends BaseController
             $form1_data_transformed['officeid'] = $this->session->get('officeid');
         }
 
+      
+
         $summaryid = $this->SurveyModel->insert_data('tblcss_summary', $form1_data_transformed);
+
+        
 
         // START PROCESS FORM2
         foreach ($form2data as $key => $value) {
@@ -112,12 +116,17 @@ class SurveyController extends BaseController
         }
 
         $form2_data_transformed['csssummaryid'] = $summaryid;
+       
         $save = $this->SurveyModel->insert_data('tblcss_details_cc', $form2_data_transformed);
+
+        
 
         // START PROCESS FORM3
         foreach ($form3data as $key => $value) {
             $form3_data_transformed[$value['name']] = $value['value'];
         }
+
+        
 
         $form3_data_transformed['csssummaryid'] = $summaryid;
         $save = $this->SurveyModel->insert_data('tblcss_details_sqd', $form3_data_transformed);

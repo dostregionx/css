@@ -1,0 +1,214 @@
+DEBUG - 2025-05-02 00:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 00:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 00:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 00:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:13:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-02 01:38:33 --> mysqli_sql_exception: Unknown column 'sq10' in 'field list' in C:\xampp\htdocs\dostx_css\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dostx_css\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\dostx_css\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\dostx_css\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\dostx_css\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\dostx_css\app\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\dostx_css\app\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_...', Array)
+#6 C:\xampp\htdocs\dostx_css\system\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+#7 C:\xampp\htdocs\dostx_css\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+#8 C:\xampp\htdocs\dostx_css\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\dostx_css\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\dostx_css\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\dostx_css\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-02 01:38:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sq10' in 'field list'
+[Method: POST, Route: survey/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (:sqd0:, :sqd1:, :sqd2:, :sqd3:, :sqd4:, :sqd5:, :sqd6:, :sqd7:, :sqd8:, :sqd9:, :sq10:, :recommend:, :suggestions:, :email:, :csssummaryid:)', [...], false)
+ 2 APPPATH\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_sqd', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-02 01:38:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sq10' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1593)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1593)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (:sqd0:, :sqd1:, :sqd2:, :sqd3:, :sqd4:, :sqd5:, :sqd6:, :sqd7:, :sqd8:, :sqd9:, :sq10:, :recommend:, :suggestions:, :email:, :csssummaryid:)', [...], false)
+ 4 APPPATH\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_sqd', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-02 01:38:33 --> [Caused by] mysqli_sql_exception: Unknown column 'sq10' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1593)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1593)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1593)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (:sqd0:, :sqd1:, :sqd2:, :sqd3:, :sqd4:, :sqd5:, :sqd6:, :sqd7:, :sqd8:, :sqd9:, :sq10:, :recommend:, :suggestions:, :email:, :csssummaryid:)', [...], false)
+ 5 APPPATH\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_sqd', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-02 01:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-02 01:39:52 --> mysqli_sql_exception: Unknown column 'sq10' in 'field list' in C:\xampp\htdocs\dostx_css\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dostx_css\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\dostx_css\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\dostx_css\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\dostx_css\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\dostx_css\app\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\dostx_css\app\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_...', Array)
+#6 C:\xampp\htdocs\dostx_css\system\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+#7 C:\xampp\htdocs\dostx_css\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+#8 C:\xampp\htdocs\dostx_css\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\dostx_css\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\dostx_css\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\dostx_css\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-02 01:39:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sq10' in 'field list'
+[Method: POST, Route: survey/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (:sqd0:, :sqd1:, :sqd2:, :sqd3:, :sqd4:, :sqd5:, :sqd6:, :sqd7:, :sqd8:, :sqd9:, :sq10:, :recommend:, :suggestions:, :email:, :csssummaryid:)', [...], false)
+ 2 APPPATH\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_sqd', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-02 01:39:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'sq10' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1594)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1594)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (:sqd0:, :sqd1:, :sqd2:, :sqd3:, :sqd4:, :sqd5:, :sqd6:, :sqd7:, :sqd8:, :sqd9:, :sq10:, :recommend:, :suggestions:, :email:, :csssummaryid:)', [...], false)
+ 4 APPPATH\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_sqd', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-02 01:39:52 --> [Caused by] mysqli_sql_exception: Unknown column 'sq10' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1594)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1594)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (\'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'5\', \'10\', \'TESTTT SUGGESTION\', \'rcabalunajr@gmail.com\', 1594)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tblcss_details_sqd` (`sqd0`, `sqd1`, `sqd2`, `sqd3`, `sqd4`, `sqd5`, `sqd6`, `sqd7`, `sqd8`, `sqd9`, `sq10`, `recommend`, `suggestions`, `email`, `csssummaryid`) VALUES (:sqd0:, :sqd1:, :sqd2:, :sqd3:, :sqd4:, :sqd5:, :sqd6:, :sqd7:, :sqd8:, :sqd9:, :sq10:, :recommend:, :suggestions:, :email:, :csssummaryid:)', [...], false)
+ 5 APPPATH\Models\SurveyModel.php(20): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\SurveyController.php(123): App\Models\SurveyModel->insert_data('tblcss_details_sqd', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SurveyController->save()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SurveyController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-02 01:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:48:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:48:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:51:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:51:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:51:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:52:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:55:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:55:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:56:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 01:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 02:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-05-02 02:04:08 --> ErrorException: Undefined array key "sqd9"
+[Method: GET, Route: reports/responses]
+in APPPATH\Views\reports\responses-view.php on line 155.
+ 1 APPPATH\Views\reports\responses-view.php(155): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "sqd9"', 'C:\\xampp\\htdocs\\dostx_css\\app\\Views\\reports\\responses-view.php', 155)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\dostx_css\\app\\Views\\reports\\responses-view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('reports/responses-view', [], true)
+ 5 APPPATH\Controllers\ReportsController.php(35): view('reports/responses-view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ReportsController->responses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReportsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-05-02 02:04:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 03:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 04:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:09:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-05-02 05:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

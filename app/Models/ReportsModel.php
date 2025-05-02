@@ -37,6 +37,8 @@ class ReportsModel extends Model
             css.servicesid,
             css.dost_personnel,
             css.clienttypeid,
+            css.typeofmarket,
+            css.rstlservice_availed,
             css.name AS summary_name,
             css.date AS summary_date,
             css.sex AS summary_sex,
@@ -60,6 +62,9 @@ class ReportsModel extends Model
             sqd.sqd6,
             sqd.sqd7,
             sqd.sqd8,
+            sqd.sqd9,
+            sqd.sqd10,
+            sqd.recommend,
             sqd.email AS sqd_email,
             sqd.suggestions,
             office.name AS office_name,
@@ -794,7 +799,19 @@ class ReportsModel extends Model
             COUNT(CASE WHEN SQD8 = 3 THEN 1 END) AS 3_SQD8,
             COUNT(CASE WHEN SQD8 = 2 THEN 1 END) AS 2_SQD8,
             COUNT(CASE WHEN SQD8 = 1 THEN 1 END) AS 1_SQD8,
-            COUNT(SQD8) AS Total_SQD8
+            COUNT(SQD8) AS Total_SQD8,
+            COUNT(CASE WHEN SQD9 = 5 THEN 1 END) AS 5_SQD9,
+            COUNT(CASE WHEN SQD9 = 4 THEN 1 END) AS 4_SQD9,
+            COUNT(CASE WHEN SQD9 = 3 THEN 1 END) AS 3_SQD9,
+            COUNT(CASE WHEN SQD9 = 2 THEN 1 END) AS 2_SQD9,
+            COUNT(CASE WHEN SQD9 = 1 THEN 1 END) AS 1_SQD9,
+            COUNT(SQD9) AS Total_SQD9,
+            COUNT(CASE WHEN SQD10 = 5 THEN 1 END) AS 5_SQD10,
+            COUNT(CASE WHEN SQD10 = 4 THEN 1 END) AS 4_SQD10,
+            COUNT(CASE WHEN SQD10 = 3 THEN 1 END) AS 3_SQD10,
+            COUNT(CASE WHEN SQD10 = 2 THEN 1 END) AS 2_SQD10,
+            COUNT(CASE WHEN SQD10 = 1 THEN 1 END) AS 1_SQD10,
+            COUNT(SQD10) AS Total_SQD10
         ');
 
         // Set the joins
