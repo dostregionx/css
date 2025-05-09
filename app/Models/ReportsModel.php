@@ -426,8 +426,8 @@ class ReportsModel extends Model
                 SUM(CASE WHEN ag.age_group = "35-49" AND cs.is_external = 0 THEN 1 ELSE 0 END) AS internal_35_49,
                 SUM(CASE WHEN ag.age_group = "50-64" AND cs.is_external = 0 THEN 1 ELSE 0 END) AS internal_50_64,
                 SUM(CASE WHEN ag.age_group = "65 or higher" AND cs.is_external = 0 THEN 1 ELSE 0 END) AS internal_65_or_higher,
-                tc.total_external_count,
-                tc.total_internal_count
+                SUM(tc.total_external_count) AS total_external_count,
+                SUM(tc.total_internal_count) AS total_internal_count
             FROM 
                 age_groups ag
                 LEFT JOIN css_summary cs ON (cs.age BETWEEN ag.min_age AND ag.max_age)
