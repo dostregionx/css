@@ -16,8 +16,18 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost:8080/';
+    //public string $baseURL = 'http://localhost:8085/';
+    public string $baseURL;
+    
+    public function __construct()
+    {
+        parent::__construct();
 
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $this->baseURL = str_contains($host, 'css.region10.dost.gov.ph')
+            ? 'https://css.region10.dost.gov.ph/'
+            : 'http://'. $_SERVER['HTTP_HOST'] .'/';
+    }
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
      * If you want to accept multiple Hostnames, set this.
