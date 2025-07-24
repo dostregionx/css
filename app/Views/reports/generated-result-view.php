@@ -622,6 +622,7 @@
                             <th>Neither Agree or Disagree</th>
                             <th>Disagree</th>
                             <th>Strongly Disagree</th>
+                            <th>Not Available</th>
                             <th>Total Responses</th>
                             <th>Overall</th>
                         </tr>
@@ -632,14 +633,14 @@
                             ?>
                             <tr>
                                 <td><?= $title ?></td>
-                                <?php for ($i = 5; $i >= 1; $i--) { ?>
+                                <?php for ($i = 5; $i >= 0; $i--) { ?>
                                     <td class="text-center"><?= isset($sqd[$i . '_' . $sqdKey]) ? $sqd[$i . '_' . $sqdKey] : 0 ?></td>
                                 <?php } ?>
                                 <td class="text-center"><?= isset($sqd['Total_' . $sqdKey]) ? $sqd['Total_' . $sqdKey] : 0 ?></td>
                                 <td class="text-center">
                                     <?php 
                                     $xsum = 0;
-                                    for ($i = 5; $i >= 1; $i--) {
+                                    for ($i = 5; $i >= 0; $i--) {
                                         $temp = $i * (isset($sqd[$i . '_' . $sqdKey]) ? $sqd[$i . '_' . $sqdKey] : 0);
                                         $xsum += $temp;
                                     }

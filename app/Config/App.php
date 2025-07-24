@@ -24,9 +24,11 @@ class App extends BaseConfig
         parent::__construct();
 
         $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-        $this->baseURL = str_contains($host, 'css.region10.dost.gov.ph')
-            ? 'https://css.region10.dost.gov.ph/'
-            : 'http://'. $_SERVER['HTTP_HOST'] .'/';
+        // $this->baseURL = str_contains(haystack: $host, 'css.region10.dost.gov.ph')
+        //     ? 'https://css.region10.dost.gov.ph/'
+        //     : 'http://'. $_SERVER['HTTP_HOST'] .'/';
+
+        $this->baseURL = "https://localhost/dostx_css";
     }
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
