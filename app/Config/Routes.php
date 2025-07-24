@@ -19,6 +19,13 @@ $routes->get('/reports/generate', 'ReportsController::generate');
 $routes->post('/reports/gen_result', 'ReportsController::gen_result');
 $routes->get('/reports/gen_pdf', 'ReportsController::gen_pdf');
 
+$routes->get('/registry/signatories', 'RegistryController::signatories');
+$routes->post('/registry/save-signatory', 'RegistryController::saveSignatory');
+$routes->post('/registry/update-signatory', 'RegistryController::updateSignatory');
+$routes->post('registry/delete-signatory/(:num)', 'RegistryController::deleteSignatory/$1');
+
+
+
 
 
 

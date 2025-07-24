@@ -36,4 +36,6 @@ class AdminController extends BaseController {
         $this->session->set_flashdata('update', true);
         redirect('admin/registry/quarters');
     }
+
+    
 }

@@ -361,7 +361,7 @@
                                                 <div class="form-group">
                                                     <label for="sqd5"><b>SQD5. I paid a reasonable amount of fees for my transaction.</b></label>
                                                     <div class="radio">
-                                                        <input type="radio" id="sqd5_strongly_agree" name="sqd5" value="5" checked />
+                                                        <input type="radio" id="sqd5_strongly_agree" name="sqd5" value="5" />
                                                         <label for="sqd5_strongly_agree">Strongly Agree</label>
                                                     </div>
                                                     <div class="radio">
@@ -379,6 +379,10 @@
                                                     <div class="radio">
                                                         <input type="radio" id="sqd5_strongly_disagree" name="sqd5" value="1" />
                                                         <label for="sqd5_strongly_disagree">Strongly Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd5_not_available" name="sqd5" value="0" checked />
+                                                        <label for="sqd5_not_available">Not Available</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -402,6 +406,10 @@
                                                     <div class="radio">
                                                         <input type="radio" id="sqd6_strongly_disagree" name="sqd6" value="1" />
                                                         <label for="sqd6_strongly_disagree">Strongly Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd6_not_available" name="sqd6" value="0" checked />
+                                                        <label for="sqd6_not_available">Not Available</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

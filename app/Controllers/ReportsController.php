@@ -125,6 +125,10 @@ class ReportsController extends BaseController
             $data['officename']['name'] = 'DOST 10';
         }
 
+
+        $data['preparer'] = $this->reportsModel->get_signatory_preparer($params['officeid']);
+        $data['approver'] = $this->reportsModel->get_signatory_approver();
+
         $data['clienttype'] = $this->reportsModel->gen_client_type($params);
         $data['agegroup'] = $this->reportsModel->gen_agegroup($params);
         $data['sex'] = $this->reportsModel->gen_sex($params);

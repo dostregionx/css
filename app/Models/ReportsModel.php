@@ -23,6 +23,35 @@ class ReportsModel extends Model
         $query = $this->db->table($tablename)->get();
         return $query->getResultArray();
     }
+    public function get_signatory_preparer($officeid)
+    {
+        if ($officeid === 'all') {
+            return $this->db->table('tblsignatories')
+                ->select('*')
+                ->where('office', 'All')
+                ->get()
+                ->getRowArray();
+        } else {
+            return $this->db->table('tblsignatories a')
+                ->select('a.*')
+                ->join('tbloffice b', 'b.shorthand = a.office', 'left')
+                ->where('a.is_approver', 0)
+                ->where('b.officeid', $officeid)
+                ->get()
+                ->getRowArray();
+        }
+    }
+
+
+    public function get_signatory_approver()
+    {
+        return $this->db->table('tblsignatories')
+            ->select('*')
+            ->where('is_approver', 1)
+            ->get()
+            ->getRowArray();
+    }
+
 
 
     public function get_responses($params)
@@ -781,12 +810,14 @@ class ReportsModel extends Model
             COUNT(CASE WHEN SQD5 = 3 THEN 1 END) AS 3_SQD5,
             COUNT(CASE WHEN SQD5 = 2 THEN 1 END) AS 2_SQD5,
             COUNT(CASE WHEN SQD5 = 1 THEN 1 END) AS 1_SQD5,
+            COUNT(CASE WHEN SQD5 = 0 THEN 0 END) AS 0_SQD5,
             COUNT(SQD5) AS Total_SQD5,
             COUNT(CASE WHEN SQD6 = 5 THEN 1 END) AS 5_SQD6,
             COUNT(CASE WHEN SQD6 = 4 THEN 1 END) AS 4_SQD6,
             COUNT(CASE WHEN SQD6 = 3 THEN 1 END) AS 3_SQD6,
             COUNT(CASE WHEN SQD6 = 2 THEN 1 END) AS 2_SQD6,
             COUNT(CASE WHEN SQD6 = 1 THEN 1 END) AS 1_SQD6,
+            COUNT(CASE WHEN SQD6 = 0 THEN 0 END) AS 0_SQD6,
             COUNT(SQD6) AS Total_SQD6,
             COUNT(CASE WHEN SQD7 = 5 THEN 1 END) AS 5_SQD7,
             COUNT(CASE WHEN SQD7 = 4 THEN 1 END) AS 4_SQD7,

@@ -123,8 +123,11 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
+                                <!-- <li>
                                     <a href="<?= base_url('admin/registry/quarters') ?>">Quarters</a>
+                                </li> -->
+                                <li>
+                                    <a href="<?= base_url('registry/signatories') ?>">Signatories</a>
                                 </li>
                             </ul>
                         </li>

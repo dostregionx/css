@@ -480,6 +480,10 @@
                                                         <input type="radio" id="sqd5_strongly_disagree" name="sqd5" value="1" />
                                                         <label for="sqd5_strongly_disagree">Strongly Disagree</label>
                                                     </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd5_not_available" name="sqd5" value="0" checked />
+                                                        <label for="sqd5_not_available">Not Available</label>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sqd6"><b>SQD6. I am confident my online transaction was secure.</b> <span class="text-danger">*</span></label>
@@ -502,6 +506,10 @@
                                                     <div class="radio">
                                                         <input type="radio" id="sqd6_strongly_disagree" name="sqd6" value="1" />
                                                         <label for="sqd6_strongly_disagree">Strongly Disagree</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" id="sqd6_not_available" name="sqd6" value="0" checked />
+                                                        <label for="sqd6_not_available">Not Available</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

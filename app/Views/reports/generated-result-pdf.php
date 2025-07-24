@@ -646,6 +646,7 @@ Office: <?=$officename['name']?></p>  <br>
                 <th>Neither Agree or Disagree</th>
                 <th>Disagree</th>
                 <th>Strongly Disagree</th>
+                <th>Not Available</th>
                 <th>Total Responses</th>
                 <th>Overall</th>
             </tr>
@@ -656,14 +657,14 @@ Office: <?=$officename['name']?></p>  <br>
                 ?>
                                        <tr>
     <td><?= $title ?></td>
-    <?php for ($i = 5; $i >= 1; $i--) { ?>
+    <?php for ($i = 5; $i >= 0; $i--) { ?>
         <td class="text-center"><?= isset($sqd[$i . '_' . $sqdKey]) ? $sqd[$i . '_' . $sqdKey] : 0 ?></td>
     <?php } ?>
     <td class="text-center"><?= isset($sqd['Total_' . $sqdKey]) ? $sqd['Total_' . $sqdKey] : 0 ?></td>
     <td class="text-center">
         <?php 
         $xsum = 0;
-        for ($i = 5; $i >= 1; $i--) {
+        for ($i = 5; $i >= 0; $i--) {
             $temp = $i * (isset($sqd[$i . '_' . $sqdKey]) ? $sqd[$i . '_' . $sqdKey] : 0);
             $xsum += $temp;
         }
@@ -742,6 +743,16 @@ Office: <?=$officename['name']?></p>  <br>
         $overall_sum += $sum_1;
         ?>
         <strong><?= $sum_1 ?></strong>
+    </td>
+    <td class="text-center">
+        <?php 
+        $sum_0 = 0; 
+        for ($i = 1; $i <= 10; $i++) { 
+            $sum_0 += isset($sqd['0_SQD' . $i]) ? $sqd['0_SQD' . $i] : 0;
+        } 
+        $overall_sum += $sum_0;
+        ?>
+        <strong><?= $sum_0 ?></strong>
     </td>
     <td class="text-center">
         <strong><?= $overall_sum ?></strong>
@@ -840,11 +851,52 @@ Office: <?=$officename['name']?></p>  <br>
                 }?>
             </ul>    
         <?php }?>
-        
     </div>
+    <style>
+        .inline-divs {
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+               
+        }
+        .inline-divs > div {
+            text-align: center;
+            margin-right: 40px;
+        }
+
+        .inline-divs > p {
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+        <div style="justify-content: space-between; margin-left:2%; max-width: 80%; margin-top: 50px;">
+            <!-- Labels -->
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <div style="text-align: left; width: 60%;">
+                    <p style="margin: 0; margin-bottom: 45px;">Prepared By:</p>
+                </div>
+                <div style="text-align: left; width: 40%;">
+                    <p style="margin: 0; margin-bottom: 45px;">Approved By:</p>
+                </div>
+            </div>
+
+            <!-- Signatories -->
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <div style="text-align: center; width: 60%;">
+                    <p style="margin: 0;"><b><?= $preparer['signatory']; ?></b></p>
+                    <p style="margin: 0;"><?= $preparer['position']; ?></p>
+                </div>
+                <div style="text-align: center; width: 40%;">
+                    <p style="margin: 0;"><b><?= $approver['signatory']; ?></b></p>
+                    <p style="margin: 0;"><?= $approver['position']; ?></p>
+                </div>
+            </div>
+        </div>
+
 </div>
 
-<script>
+<!-- <script>
         // Function to trigger print dialog
         function triggerPrint() {
             window.print();
@@ -854,4 +906,4 @@ Office: <?=$officename['name']?></p>  <br>
         window.onload = function() {
             triggerPrint();
         };
-    </script>
+    </script> -->
