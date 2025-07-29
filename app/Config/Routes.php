@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'HomeController::index');
+$routes->match(['get', 'head'], '/', 'HomeController::index');
 $routes->get('/survey/external', 'SurveyController::external');
 $routes->get('/survey/internal', 'SurveyController::internal');
 
