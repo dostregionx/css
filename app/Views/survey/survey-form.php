@@ -482,7 +482,7 @@
                                                     </div>
                                                     <div class="radio">
                                                         <input type="radio" id="sqd5_not_available" name="sqd5" value="0" checked />
-                                                        <label for="sqd5_not_available">Not Available</label>
+                                                        <label for="sqd5_not_available">Not Applicable</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -509,7 +509,7 @@
                                                     </div>
                                                     <div class="radio">
                                                         <input type="radio" id="sqd6_not_available" name="sqd6" value="0" checked />
-                                                        <label for="sqd6_not_available">Not Available</label>
+                                                        <label for="sqd6_not_available">Not Applicable</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

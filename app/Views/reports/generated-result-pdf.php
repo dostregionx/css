@@ -622,17 +622,29 @@ Office: <?=$officename['name']?></p>  <br>
     <td class="text-center">
         <?= isset($sqd['Total_SQD0']) ? $sqd['Total_SQD0'] : 0 ?>
     </td>
-                <td class="text-center">
-                    <?php $highest_possible_score = $sqd['Total_SQD0']*5;
-                            $xtotal = 0;
-                            for ($i=1; $i <= 5; $i++) { 
-                                $xtotal += $sqd[$i.'_SQD0']*$i;
-                            }
-
-                            $sqd0_percentage = ($highest_possible_score != 0) ? round(($xtotal / $highest_possible_score) * 100, 1) : 0;
-                            echo $sqd0_percentage . '%';
-                        ?>
-                </td>
+  
+                            <td class="text-center">
+                                <?php
+                                // Get the counts for 5_SQD0, 4_SQD0, Total_SQD0, and 0_SQD0
+                                $count_5_sqd0 = isset($sqd['5_SQD0']) ? $sqd['5_SQD0'] : 0;
+                                $count_4_sqd0 = isset($sqd['4_SQD0']) ? $sqd['4_SQD0'] : 0;
+                                $total_sqd0 = isset($sqd['Total_SQD0']) ? $sqd['Total_SQD0'] : 0;
+                                $count_0_sqd0 = isset($sqd['0_SQD0']) ? $sqd['0_SQD0'] : 0;
+                                
+                                // Calculate the numerator as the sum of 5_SQD0 and 4_SQD0
+                                $numerator = $count_5_sqd0 + $count_4_sqd0;
+                                
+                                // Calculate the denominator as (Total_SQD0 - 0_SQD0)
+                                $denominator = $total_sqd0 - $count_0_sqd0;
+                                
+                                // Calculate the percentage: (5_SQD0 + 4_SQD0) / (Total_SQD0 - 0_SQD0)
+                                // Ensure no division by zero
+                                $sqd0_percentage = ($denominator != 0) ? round(($numerator / $denominator) * 100, 1) : 0;
+                                
+                                // Output the percentage
+                                echo $sqd0_percentage . '%';
+                                ?>
+                            </td>
             </tr>
         </tbody>
     </table>
@@ -646,7 +658,7 @@ Office: <?=$officename['name']?></p>  <br>
                 <th>Neither Agree or Disagree</th>
                 <th>Disagree</th>
                 <th>Strongly Disagree</th>
-                <th>Not Available</th>
+                <th>Not Applicable</th>
                 <th>Total Responses</th>
                 <th>Overall</th>
             </tr>
@@ -759,15 +771,26 @@ Office: <?=$officename['name']?></p>  <br>
     </td>
     <td class="text-center">
         <strong>
-        <?php 
-        $highest_possible_score = $overall_sum * 5;
-        $xtotal = 0;
-        for ($i = 1; $i <= 5; $i++) { 
-            $xtotal += ${'sum_' . $i} * $i;
-        }
-        $percentage = ($highest_possible_score != 0) ? round(($xtotal / $highest_possible_score) * 100, 1) : 0;
-        echo $percentage . '%';
-        ?>
+                <?php 
+            $highest_possible_score = $overall_sum * 5;
+            $xtotal = 0;
+            for ($i = 1; $i <= 5; $i++) { 
+                $xtotal += ${'sum_' . $i} * $i;
+            }
+
+            // Calculate the denominator (total sum minus sum_0)
+            $denominator = $overall_sum - $sum_0;
+
+            // Check to avoid division by zero
+            if ($denominator != 0) {
+                $percentage = round(($sum_5 + $sum_4) / $denominator * 100, 1);  // Make sure the calculation is correct
+            } else {
+                $percentage = 0;  // If denominator is 0, return 0%
+            }
+
+            echo $percentage . '%';
+            ?>
+
         </strong>
     </td>
 </tr>

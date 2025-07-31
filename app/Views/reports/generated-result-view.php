@@ -584,32 +584,44 @@
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="text-center">SQD0</td>
+                            <td class="text-center">SQD0</td>
                             <?php 
-                            // Loop through values from 5 to 1
+                            // Loop through values from 5 to 1 and print the count for each category
                             for ($i = 5; $i >= 1; $i--) { 
-                                // Print the count for each category
                                 $key = $i . '_SQD0';
                                 $count = isset($sqd[$key]) ? $sqd[$key] : 0;
                                 echo '<td class="text-center">' . $count . '</td>';
                             } 
                             ?>
+                            
                             <td class="text-center">
                                 <?= isset($sqd['Total_SQD0']) ? $sqd['Total_SQD0'] : 0 ?>
                             </td>
 
                             <td class="text-center">
-                                <?php $highest_possible_score = $sqd['Total_SQD0']*5;
-                                        $xtotal = 0;
-                                        for ($i=1; $i <= 5; $i++) { 
-                                            $xtotal += $sqd[$i.'_SQD0']*$i;
-                                        }
-
-                                        $sqd0_percentage = ($highest_possible_score != 0) ? round(($xtotal / $highest_possible_score) * 100, 1) : 0;
-                                        echo $sqd0_percentage . '%';
-                                    ?>
+                                <?php
+                                // Get the counts for 5_SQD0, 4_SQD0, Total_SQD0, and 0_SQD0
+                                $count_5_sqd0 = isset($sqd['5_SQD0']) ? $sqd['5_SQD0'] : 0;
+                                $count_4_sqd0 = isset($sqd['4_SQD0']) ? $sqd['4_SQD0'] : 0;
+                                $total_sqd0 = isset($sqd['Total_SQD0']) ? $sqd['Total_SQD0'] : 0;
+                                $count_0_sqd0 = isset($sqd['0_SQD0']) ? $sqd['0_SQD0'] : 0;
+                                
+                                // Calculate the numerator as the sum of 5_SQD0 and 4_SQD0
+                                $numerator = $count_5_sqd0 + $count_4_sqd0;
+                                
+                                // Calculate the denominator as (Total_SQD0 - 0_SQD0)
+                                $denominator = $total_sqd0 - $count_0_sqd0;
+                                
+                                // Calculate the percentage: (5_SQD0 + 4_SQD0) / (Total_SQD0 - 0_SQD0)
+                                // Ensure no division by zero
+                                $sqd0_percentage = ($denominator != 0) ? round(($numerator / $denominator) * 100, 1) : 0;
+                                
+                                // Output the percentage
+                                echo $sqd0_percentage . '%';
+                                ?>
                             </td>
                         </tr>
+
                     </tbody>
                 </table>
 
@@ -622,7 +634,7 @@
                             <th>Neither Agree or Disagree</th>
                             <th>Disagree</th>
                             <th>Strongly Disagree</th>
-                            <th>Not Available</th>
+                            <th>Not Applicable</th>
                             <th>Total Responses</th>
                             <th>Overall</th>
                         </tr>
@@ -632,23 +644,37 @@
                         function generateRow($title, $sqd, $sqdKey) {
                             ?>
                             <tr>
-                                <td><?= $title ?></td>
+                                <td><?=$title   ?></td>
                                 <?php for ($i = 5; $i >= 0; $i--) { ?>
                                     <td class="text-center"><?= isset($sqd[$i . '_' . $sqdKey]) ? $sqd[$i . '_' . $sqdKey] : 0 ?></td>
                                 <?php } ?>
                                 <td class="text-center"><?= isset($sqd['Total_' . $sqdKey]) ? $sqd['Total_' . $sqdKey] : 0 ?></td>
                                 <td class="text-center">
-                                    <?php 
+                                <?php 
                                     $xsum = 0;
                                     for ($i = 5; $i >= 0; $i--) {
                                         $temp = $i * (isset($sqd[$i . '_' . $sqdKey]) ? $sqd[$i . '_' . $sqdKey] : 0);
                                         $xsum += $temp;
                                     }
-                                    $total = isset($sqd['Total_' . $sqdKey]) ? $sqd['Total_' . $sqdKey] : 0;
-                                    $max_possible_score = $total * 5;
-                                    $percentage = ($max_possible_score != 0) ? round(($xsum / $max_possible_score) * 100, 1) : 0;
+
+                                    $sa_responses = isset($sqd['5_' . $sqdKey]) ? $sqd['5_' . $sqdKey] : 0;
+                                    $a_responses  = isset($sqd['4_' . $sqdKey]) ? $sqd['4_' . $sqdKey] : 0;
+
+                                    $total        = isset($sqd['Total_' . $sqdKey]) ? $sqd['Total_' . $sqdKey] : 0;
+                                    $np_responses = isset($sqd['0_' . $sqdKey]) ? $sqd['0_' . $sqdKey] : 0;
+
+                                    $denominator = $total - $np_responses;
+
+                                    // Check to avoid division by zero
+                                    if ($denominator != 0) {
+                                        $percentage = round((($sa_responses + $a_responses) / $denominator) * 100, 1);
+                                    } else {
+                                        $percentage = 0;
+                                    }
+
                                     echo $percentage . '%';
                                     ?>
+
                                 </td>
                             </tr>
                             <?php } ?>
@@ -720,19 +746,40 @@
         <strong><?= $sum_1 ?></strong>
     </td>
     <td class="text-center">
+        <?php 
+        $sum_0 = 0; 
+        for ($i = 1; $i <= 10; $i++) { 
+            $sum_0 += isset($sqd['0_SQD' . $i]) ? $sqd['0_SQD' . $i] : 0;
+        } 
+        $overall_sum += $sum_0;
+        ?>
+        <strong><?= $sum_0 ?></strong>
+    </td>
+    <td class="text-center">
         <strong><?= $overall_sum ?></strong>
     </td>
     <td class="text-center">
         <strong>
-        <?php 
-        $highest_possible_score = $overall_sum * 5;
-        $xtotal = 0;
-        for ($i = 1; $i <= 5; $i++) { 
-            $xtotal += ${'sum_' . $i} * $i;
-        }
-        $percentage = ($highest_possible_score != 0) ? round(($xtotal / $highest_possible_score) * 100, 1) : 0;
-        echo $percentage . '%';
-        ?>
+                <?php 
+            $highest_possible_score = $overall_sum * 5;
+            $xtotal = 0;
+            for ($i = 1; $i <= 5; $i++) { 
+                $xtotal += ${'sum_' . $i} * $i;
+            }
+
+            // Calculate the denominator (total sum minus sum_0)
+            $denominator = $overall_sum - $sum_0;
+
+            // Check to avoid division by zero
+            if ($denominator != 0) {
+                $percentage = round(($sum_5 + $sum_4) / $denominator * 100, 1);  // Make sure the calculation is correct
+            } else {
+                $percentage = 0;  // If denominator is 0, return 0%
+            }
+
+            echo $percentage . '%';
+            ?>
+
         </strong>
     </td>
 </tr>
